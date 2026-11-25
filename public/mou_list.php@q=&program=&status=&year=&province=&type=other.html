@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="th" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script nonce="VjGnmNDiSWKd73g96PS5kw==">(function(){var t;try{t=localStorage.getItem('mou-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-bs-theme',t)})();</script><meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b2e6b">
+<title>สืบค้น MOU | วิทยาลัยพณิชยการบางนา</title>
+<meta name="description" content="ค้นหาและกรองข้อมูลบันทึกข้อตกลงความร่วมมือตามประเภทหน่วยงาน สาขาวิชา สถานะ ปีที่ลงนาม และจังหวัด">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="สืบค้น MOU | วิทยาลัยพณิชยการบางนา">
+<meta property="og:description" content="ค้นหาและกรองข้อมูลบันทึกข้อตกลงความร่วมมือตามประเภทหน่วยงาน สาขาวิชา สถานะ ปีที่ลงนาม และจังหวัด">
+<meta property="og:url" content="#">
+<link href="../assets/vendor/fonts/fonts.css@v=1795594268.css" rel="stylesheet"><link href="../assets/vendor/bootstrap/bootstrap.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/datatables/dataTables.bootstrap5.min.css@v=1795594268.css" rel="stylesheet"><link href="../assets/css/style.css@v=1795594253.css" rel="stylesheet"></head>
+<body class="public">
+<div class="page-progress" id="pageLoader" aria-hidden="true"></div><a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-gold" style="z-index:3100" href="mou_list.php@q=&amp;program=&amp;status=&amp;year=&amp;province=&amp;type=other.html#main">ข้ามไปยังเนื้อหา</a>
+<nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.php.html">
+            <span class="logo-slot bounce-icon" aria-hidden="true"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>      <span class="lh-sm"><small class="d-block text-gold">ฐานข้อมูลบันทึกข้อตกลงความร่วมมือ (MOU)</small>วิทยาลัยพณิชยการบางนา</span>
+    </a>
+    <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-2">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="โหมดมืด" aria-pressed="false" title="สลับโหมดมืด/สว่าง"><i class="bi bi-moon-stars-fill ic-moon" aria-hidden="true"></i><i class="bi bi-sun-fill ic-sun" aria-hidden="true"></i></button>      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="เปิดเมนู"><span class="navbar-toggler-icon"></span></button>
+    </div>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                <li class="nav-item"><a class="nav-link "  href="index.php.html"><i class="bi bi-house" aria-hidden="true"></i> หน้าหลัก</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="mou_list.php.html"><i class="bi bi-search" aria-hidden="true"></i> สืบค้น MOU</a></li>
+                <li class="nav-item"><a class="nav-link "  href="news_list.php.html"><i class="bi bi-newspaper" aria-hidden="true"></i> ข่าวประชาสัมพันธ์</a></li>
+                <li class="nav-item"><a class="nav-link "  href="contact.php.html"><i class="bi bi-envelope" aria-hidden="true"></i> ติดต่อ/เสนอความร่วมมือ</a></li>
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-sm btn-gold px-3" href="../admin/index.html"><i class="bi bi-person-lock" aria-hidden="true"></i> เจ้าหน้าที่</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div class="container mt-4">
+  <nav aria-label="breadcrumb" class="fade-down"><ol class="breadcrumb mb-2">
+    <li class="breadcrumb-item"><a href="index.php.html"><i class="bi bi-house" aria-hidden="true"></i> หน้าหลัก</a></li>
+    <li class="breadcrumb-item active" aria-current="page">สืบค้น MOU</li></ol></nav>
+  <div class="section-kicker">คลังข้อมูล MOU</div>
+  <h1 class="section-title h3 fade-up">สืบค้นบันทึกข้อตกลงความร่วมมือ (MOU)</h1>
+
+  <!-- แท็บแยกตามประเภทหน่วยงาน -->
+  <nav aria-label="ประเภทหน่วยงาน"><ul class="nav nav-pills mb-3 flex-nowrap overflow-auto pb-1 scroll-thin fade-up delay-1">
+        <li class="nav-item"><a class="nav-link "  href="mou_list.php@q=&amp;program=&amp;status=&amp;year=&amp;province=.html">ทั้งหมด</a></li>
+        <li class="nav-item"><a class="nav-link "  href="mou_list.php@q=&amp;program=&amp;status=&amp;year=&amp;province=&amp;type=enterprise.html">สถานประกอบการ</a></li>
+        <li class="nav-item"><a class="nav-link "  href="mou_list.php@q=&amp;program=&amp;status=&amp;year=&amp;province=&amp;type=education.html">สถาบันการศึกษา</a></li>
+        <li class="nav-item"><a class="nav-link "  href="mou_list.php@q=&amp;program=&amp;status=&amp;year=&amp;province=&amp;type=government.html">หน่วยงานรัฐ</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="mou_list.php@q=&amp;program=&amp;status=&amp;year=&amp;province=&amp;type=other.html">อื่นๆ</a></li>
+      </ul></nav>
+
+  <form class="filter-box mb-4 fade-up delay-2" method="get" id="filterForm" role="search" aria-label="ตัวกรอง MOU">
+    <input type="hidden" name="type" value="other">
+    <div class="row g-2">
+      <div class="col-lg-4"><label class="visually-hidden" for="fq">คำค้น</label><div class="input-group"><span class="input-group-text" aria-hidden="true"><i class="bi bi-search" aria-hidden="true"></i></span><input type="search" id="fq" name="q" class="form-control" maxlength="100" value="" placeholder="คำค้น: ชื่อเรื่อง/หน่วยงาน/เลขที่ MOU/สาขา"></div></div>
+      <div class="col-6 col-lg-2"><label class="visually-hidden" for="fprog">สาขาวิชา</label><select id="fprog" name="program" class="form-select"><option value="">ทุกสาขาวิชา</option>
+        <option value="5" >ปวช. การขายหน้าร้าน</option><option value="2" >ปวช. การตลาด</option><option value="6" >ปวช. การท่องเที่ยว</option><option value="1" >ปวช. การบัญชี</option><option value="3" >ปวช. การเลขานุการ</option><option value="4" >ปวช. คอมพิวเตอร์ธุรกิจ</option><option value="11" >ปวส. การจัดการโลจิสติกส์</option><option value="8" >ปวส. การตลาด</option><option value="7" >ปวส. การบัญชี</option><option value="9" >ปวส. คอมพิวเตอร์ธุรกิจ</option><option value="10" >ปวส. เทคโนโลยีธุรกิจดิจิทัล</option></select></div>
+      <div class="col-6 col-lg-2"><label class="visually-hidden" for="fstatus">สถานะ</label><select id="fstatus" name="status" class="form-select"><option value="">ทุกสถานะ</option>
+        <option value="active" >มีผลบังคับใช้</option><option value="expiring" >ใกล้หมดอายุ</option><option value="expired" >หมดอายุ</option></select></div>
+      <div class="col-6 col-lg-2"><label class="visually-hidden" for="fyear">ปีที่ลงนาม</label><select id="fyear" name="year" class="form-select"><option value="">ทุกปีที่ลงนาม</option>
+        <option value="2026" >พ.ศ. 2569</option><option value="2025" >พ.ศ. 2568</option><option value="2024" >พ.ศ. 2567</option><option value="2023" >พ.ศ. 2566</option></select></div>
+      <div class="col-6 col-lg-2"><label class="visually-hidden" for="fprov">จังหวัด</label><select id="fprov" name="province" class="form-select"><option value="">ทุกจังหวัด</option>
+        <option >กรุงเทพมหานคร</option><option >สมุทรปราการ</option></select></div>
+    </div>
+    <div class="mt-2 d-flex gap-2 flex-wrap align-items-center">
+      <button class="btn btn-navy"><i class="bi bi-funnel" aria-hidden="true"></i> กรองข้อมูล</button>
+      <a href="mou_list.php.html" class="btn btn-outline-secondary"><i class="bi bi-x-circle" aria-hidden="true"></i> ล้างตัวกรอง</a>
+      <span class="ms-auto chip chip-primary" role="status">พบ <strong class="mx-1">1</strong> รายการ</span>
+      <div class="btn-group" role="group" aria-label="รูปแบบการแสดงผล">
+        <button type="button" class="btn btn-outline-primary js-view-toggle active" data-view="table" aria-pressed="true"><i class="bi bi-table" aria-hidden="true"></i> ตาราง</button>
+        <button type="button" class="btn btn-outline-primary js-view-toggle" data-view="cards" aria-pressed="false"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> การ์ด</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="view-table" class="table-wrap fade-up delay-3">
+    <div class="table-responsive">
+    <table class="table table-hover align-middle js-dt" data-order='[4,"desc"]'>
+      <caption class="visually-hidden">รายการ MOU ที่ตรงกับตัวกรอง 1 รายการ</caption>
+      <thead class="table-light"><tr><th>เลขที่ MOU</th><th>ชื่อเรื่อง / หน่วยงาน</th><th>ประเภท</th><th>จังหวัด</th><th>วันที่ลงนาม</th><th>สิ้นสุด</th><th>สถานะ</th></tr></thead>
+      <tbody>
+              <tr>
+          <td class="text-nowrap">MOU-009/2568</td>
+          <td><div class="d-flex gap-2 align-items-center">
+                                <div><a class="fw-semibold text-decoration-none" href="mou_detail.php@id=9.html">ความร่วมมือส่งเสริมทักษะวิชาชีพด้านธุรกิจค้าปลีก</a>
+                <div class="small text-muted">สมาคมการค้าผู้ประกอบการค้าปลีกไทย</div></div></div></td>
+          <td class="text-nowrap">อื่นๆ</td>
+          <td>กรุงเทพมหานคร</td>
+          <td data-order="2025-09-05" class="text-nowrap">5 ก.ย. 2568</td>
+          <td data-order="2028-09-04" class="text-nowrap">4 ก.ย. 2571</td>
+          <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+        </tr>
+            </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div id="view-cards" class="d-none">
+    <div class="row g-4 stagger">
+      <div class="col-md-6 col-lg-4 card-item"><article class="card h-100 mou-card">
+  <div class="card-cover">
+    <i class="bi bi-file-earmark-text" aria-hidden="true"></i>    <div class="cover-badges"><span class="chip chip-glass">อื่นๆ</span><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></div>
+      </div>
+  <div class="card-body">
+    <h3 class="card-title h6 mb-2"><a class="stretched-link text-decoration-none" href="mou_detail.php@id=9.html">ความร่วมมือส่งเสริมทักษะวิชาชีพด้านธุรกิจค้าปลีก</a></h3>
+    <div class="meta mb-1"><i class="bi bi-building" aria-hidden="true"></i> <span class="text-truncate">สมาคมการค้าผู้ประกอบการค้าปลีกไทย</span></div>
+    <div class="meta mb-1"><i class="bi bi-hash" aria-hidden="true"></i> <span class="visually-hidden">เลขที่ </span>MOU-009/2568</div>
+    <div class="meta"><i class="bi bi-calendar-check" aria-hidden="true"></i> ลงนาม 5 ก.ย. 2568</div>
+    <div class="card-foot d-flex justify-content-between align-items-center">
+      <span class="text-muted"><i class="bi bi-hourglass-split" aria-hidden="true"></i> เหลืออีก 1 ปี 9 เดือน 10 วัน</span>
+      <i class="bi bi-arrow-right-circle text-gold" aria-hidden="true"></i>
+    </div>
+  </div>
+</article>
+</div>    </div>
+        <div class="text-center mt-3"><button type="button" class="btn btn-outline-primary d-none" id="btn-more">แสดงเพิ่มเติม</button></div>
+  </div>
+</div>
+</main>
+<footer class="site-footer mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <div class="d-flex align-items-center gap-2 mb-3"><span class="logo-slot" aria-hidden="true"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>
+          <h2 class="h5 text-gold mb-0">วิทยาลัยพณิชยการบางนา</h2></div>
+        <p class="small mb-2"><span class="f-ic" aria-hidden="true"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><span class="visually-hidden">ที่อยู่: </span>เลขที่ 1 ถนนบางนา-ตราด แขวงบางนา เขตบางนา กรุงเทพมหานคร 10260</p>
+        <p class="small mb-2"><span class="f-ic" aria-hidden="true"><i class="bi bi-telephone" aria-hidden="true"></i></span><span class="visually-hidden">โทรศัพท์: </span>02-000-0000</p>
+        <p class="small mb-0"><span class="f-ic" aria-hidden="true"><i class="bi bi-envelope" aria-hidden="true"></i></span><span class="visually-hidden">อีเมล: </span>coop@example.ac.th</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 class="h6 text-gold">เมนู</h2>
+        <ul class="list-unstyled small mb-0 d-grid gap-2">
+          <li><a href="mou_list.php.html"><i class="bi bi-chevron-right small" aria-hidden="true"></i> สืบค้น MOU</a></li>
+          <li><a href="news_list.php.html"><i class="bi bi-chevron-right small" aria-hidden="true"></i> ข่าวประชาสัมพันธ์</a></li>
+          <li><a href="contact.php.html"><i class="bi bi-chevron-right small" aria-hidden="true"></i> ติดต่อ / เสนอความร่วมมือ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2 class="h6 text-gold">เวลาทำการ</h2>
+        <p class="small">จันทร์ – ศุกร์ เวลา 08.30 – 16.30 น.</p>
+        <p class="small mb-0"><i class="bi bi-shield-check" aria-hidden="true"></i> ข้อมูลที่เผยแพร่เป็นข้อมูลสาธารณะเท่านั้น ไม่เปิดเผยข้อมูลส่วนบุคคลตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล (PDPA)</p>
+      </div>
+    </div>
+    <hr class="border-light opacity-25 my-4">
+    <div class="small text-center">© 2569 วิทยาลัยพณิชยการบางนา — สงวนลิขสิทธิ์</div>
+  </div>
+</footer>
+<script src="../assets/vendor/jquery/jquery.min.js@v=1795594268"></script><script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js@v=1795594266"></script><script src="../assets/vendor/datatables/jquery.dataTables.min.js@v=1795594268"></script><script src="../assets/vendor/datatables/dataTables.bootstrap5.min.js@v=1795594268"></script><script src="../assets/vendor/sweetalert2/sweetalert2.all.min.js@v=1795594269"></script><script src="../assets/js/app.js@v=1795594254"></script><script src="../demo-banner.js"></script></body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="th" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script nonce="nvuOBdBMDapmskTv9XkKrA==">(function(){var t;try{t=localStorage.getItem('mou-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-bs-theme',t)})();</script><meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>จัดการข้อตกลง MOU | หลังบ้าน MOU</title>
+<link href="../assets/vendor/fonts/fonts.css@v=1795594268.css" rel="stylesheet"><link href="../assets/vendor/bootstrap/bootstrap.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/datatables/dataTables.bootstrap5.min.css@v=1795594268.css" rel="stylesheet"><link href="../assets/css/style.css@v=1795594253.css" rel="stylesheet"><link href="../assets/css/admin.css@v=1795594253.css" rel="stylesheet"></head>
+<body class="admin-body">
+<div class="page-progress" id="pageLoader" aria-hidden="true"></div><div class="admin-wrap">
+  <aside class="admin-side offcanvas-lg offcanvas-start" id="sideMenu" tabindex="-1" aria-label="เมนูหลังบ้าน">
+    <div class="d-flex align-items-center">
+      <a class="side-brand flex-grow-1" href="index.php.html"><span class="logo-slot bounce-icon" aria-hidden="true"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>
+        <div class="lh-sm"><small class="text-gold d-block">ระบบหลังบ้าน MOU</small>วิทยาลัยพณิชยการบางนา</div></a>
+      <button type="button" class="btn-close btn-close-white d-lg-none me-3" data-bs-dismiss="offcanvas" data-bs-target="#sideMenu" aria-label="ปิดเมนู"></button>
+    </div>
+    <nav class="nav flex-column mt-1">
+      <div class="side-label">ภาพรวม</div>        <a class="nav-link "  href="index.php.html">
+          <i class="bi bi-speedometer2" aria-hidden="true"></i> <span>แดชบอร์ด</span>
+                  </a>
+              <a class="nav-link "  href="reports.php.html">
+          <i class="bi bi-bar-chart-line" aria-hidden="true"></i> <span>รายงาน</span>
+                  </a>
+      <div class="side-label">งานข้อตกลง</div>        <a class="nav-link active" aria-current="page" href="mou_list.php.html">
+          <i class="bi bi-file-earmark-text" aria-hidden="true"></i> <span>ข้อตกลง MOU</span>
+          <span class="badge rounded-pill bg-warning text-dark ms-auto ">2<span class="visually-hidden"> รายการใกล้หมดอายุ</span></span>        </a>
+              <a class="nav-link "  href="renewals.php.html">
+          <i class="bi bi-arrow-repeat" aria-hidden="true"></i> <span>ต่ออายุสัญญา</span>
+                  </a>
+              <a class="nav-link "  href="proposals.php.html">
+          <i class="bi bi-inbox" aria-hidden="true"></i> <span>ข้อเสนอความร่วมมือ</span>
+                  </a>
+      <div class="side-label">ข้อมูลหลัก</div>        <a class="nav-link "  href="partners.php.html">
+          <i class="bi bi-buildings" aria-hidden="true"></i> <span>หน่วยงานคู่ความร่วมมือ</span>
+                  </a>
+              <a class="nav-link "  href="programs.php.html">
+          <i class="bi bi-mortarboard" aria-hidden="true"></i> <span>สาขาวิชา</span>
+                  </a>
+              <a class="nav-link "  href="news.php.html">
+          <i class="bi bi-newspaper" aria-hidden="true"></i> <span>ข่าวประชาสัมพันธ์</span>
+                  </a>
+      <div class="side-label">ระบบ</div>        <a class="nav-link "  href="users.php.html">
+          <i class="bi bi-people" aria-hidden="true"></i> <span>ผู้ใช้งาน</span>
+                  </a>
+              <a class="nav-link "  href="logs.php.html">
+          <i class="bi bi-clock-history" aria-hidden="true"></i> <span>Activity Log</span>
+                  </a>
+              <a class="nav-link "  href="settings.php.html">
+          <i class="bi bi-gear" aria-hidden="true"></i> <span>ตั้งค่าเว็บ</span>
+                  </a>
+            <div class="side-label">เว็บไซต์</div>
+      <a class="nav-link" href="../public/index.php.html" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> <span>ดูเว็บไซต์สาธารณะ<span class="visually-hidden"> (เปิดแท็บใหม่)</span></span></a>
+    </nav>
+    <div class="side-foot"><i class="bi bi-shield-lock" aria-hidden="true"></i> เข้าสู่ระบบในชื่อ admin</div>
+  </aside>
+  <div class="admin-main">
+    <header class="admin-top">
+      <button class="btn btn-soft btn-icon d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sideMenu" aria-controls="sideMenu" aria-label="เปิดเมนู"><i class="bi bi-list" aria-hidden="true"></i></button>
+      <div class="flex-grow-1 min-w-0">
+        <div class="crumb d-none d-sm-block"><i class="bi bi-house-door" aria-hidden="true"></i> หลังบ้าน</div>
+        <h1 class="mb-0 text-truncate">จัดการข้อตกลง MOU</h1>
+      </div>
+              <a class="btn btn-sm btn-warning d-none d-md-inline-flex align-items-center gap-1" href="mou_list.php@status=expiring.html"><i class="bi bi-bell-fill" aria-hidden="true"></i> ใกล้หมดอายุ 2 รายการ</a>
+                  <div class="dropdown">
+        <button type="button" class="btn btn-soft btn-icon position-relative" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="การแจ้งเตือน 2 รายการใหม่" title="การแจ้งเตือน"><i class="bi bi-bell" aria-hidden="true"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:.72rem" aria-hidden="true">2</span></button>
+        <div class="dropdown-menu dropdown-menu-end p-0 overflow-hidden" style="width:min(22rem,92vw)">
+          <div class="px-3 py-2 fw-semibold border-bottom"><i class="bi bi-bell me-1" aria-hidden="true"></i> การแจ้งเตือน (2)</div>
+                              <form method="post" action="#" class="border-bottom"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="id" value="2">
+            <button type="submit" class="dropdown-item text-wrap small py-2"><i class="bi bi-hourglass-split text-warning me-1" aria-hidden="true"></i>MOU MOU-003/2567 (ธนาคารกรุงเทพ จำกัด (มหาชน) สาขาบางนา) จะหมดอายุ 9 ม.ค. 2570 — เหลือ 45 วัน              <span class="d-block text-muted meta-sm">25 พ.ย. 2569 เวลา 15:11 น.</span></button></form>
+                    <form method="post" action="#" class="border-bottom"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="id" value="1">
+            <button type="submit" class="dropdown-item text-wrap small py-2"><i class="bi bi-hourglass-split text-warning me-1" aria-hidden="true"></i>MOU MOU-008/2568 (สำนักงานเขตบางนา กรุงเทพมหานคร) จะหมดอายุ 31 ธ.ค. 2569 — เหลือ 36 วัน              <span class="d-block text-muted meta-sm">25 พ.ย. 2569 เวลา 15:11 น.</span></button></form>
+                    <form method="post" action="#" class="text-center py-1"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="all" value="1">
+            <button type="submit" class="btn btn-sm btn-link text-decoration-none">ทำเครื่องหมายว่าอ่านแล้วทั้งหมด</button></form>        </div>
+      </div>
+            <button type="button" class="theme-toggle on-light" data-theme-toggle aria-label="โหมดมืด" aria-pressed="false" title="สลับโหมดมืด/สว่าง"><i class="bi bi-moon-stars-fill ic-moon" aria-hidden="true"></i><i class="bi bi-sun-fill ic-sun" aria-hidden="true"></i></button>      <div class="dropdown">
+        <button type="button" class="user-chip dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="บัญชีผู้ใช้: ผู้ดูแลระบบ">
+          <span class="avatar" aria-hidden="true">ผ</span>
+          <span class="d-none d-md-inline text-start lh-sm"><span class="d-block small fw-semibold">ผู้ดูแลระบบ</span>
+            <span class="d-block text-muted meta-sm">ผู้ดูแลระบบ</span></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li class="d-md-none"><span class="dropdown-item-text small"><strong>ผู้ดูแลระบบ</strong><br><span class="text-muted">ผู้ดูแลระบบ</span></span></li>
+          <li><a class="dropdown-item" href="profile.php.html"><i class="bi bi-key me-2" aria-hidden="true"></i>เปลี่ยนรหัสผ่าน</a></li>
+          <li><button type="button" class="dropdown-item" data-theme-toggle data-theme-label><i class="bi bi-circle-half me-2" aria-hidden="true"></i>สลับโหมดมืด/สว่าง</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><form method="post" action="#"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><button type="submit" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right me-2" aria-hidden="true"></i>ออกจากระบบ</button></form></li>
+        </ul>
+      </div>
+    </header>
+    <div class="admin-content fade-in">
+<div class="page-head fade-up"><div><div class="sub">ทั้งหมด 8 รายการ</div><h2 class="title">ข้อตกลง MOU</h2></div>
+  <div class="d-flex flex-wrap gap-2">
+    <a class="btn btn-gold" href="mou_form.php.html"><i class="bi bi-plus-lg" aria-hidden="true"></i> เพิ่ม MOU</a></div></div>
+<form class="panel fade-up delay-1" method="get" role="search" aria-label="ตัวกรอง MOU"><div class="row g-2">
+  <div class="col-lg-3"><label class="visually-hidden" for="aq">คำค้น</label><div class="input-group"><span class="input-group-text" aria-hidden="true"><i class="bi bi-search" aria-hidden="true"></i></span><input type="search" id="aq" name="q" class="form-control" placeholder="เลขที่/ชื่อเรื่อง/หน่วยงาน" value=""></div></div>
+  <div class="col-6 col-lg-2"><label class="visually-hidden" for="atype">ประเภทหน่วยงาน</label><select id="atype" name="type" class="form-select"><option value="">ทุกประเภทหน่วยงาน</option>
+    <option value="enterprise" >สถานประกอบการ</option><option value="education" >สถาบันการศึกษา</option><option value="government" >หน่วยงานรัฐ</option><option value="other" >อื่นๆ</option></select></div>
+  <div class="col-6 col-lg-2"><label class="visually-hidden" for="astatus">สถานะ</label><select id="astatus" name="status" class="form-select"><option value="">ทุกสถานะ</option>
+    <option value="draft" >ฉบับร่าง</option><option value="active" selected>มีผลบังคับใช้</option><option value="expiring" >ใกล้หมดอายุ</option><option value="expired" >หมดอายุ</option><option value="cancelled" >ยกเลิก</option></select></div>
+  <div class="col-6 col-lg-2"><label class="visually-hidden" for="aprog">สาขาวิชา</label><select id="aprog" name="program" class="form-select"><option value="">ทุกสาขา</option>
+    <option value="5" >ปวช. การขายหน้าร้าน</option><option value="2" >ปวช. การตลาด</option><option value="6" >ปวช. การท่องเที่ยว</option><option value="1" >ปวช. การบัญชี</option><option value="3" >ปวช. การเลขานุการ</option><option value="4" >ปวช. คอมพิวเตอร์ธุรกิจ</option><option value="11" >ปวส. การจัดการโลจิสติกส์</option><option value="8" >ปวส. การตลาด</option><option value="7" >ปวส. การบัญชี</option><option value="9" >ปวส. คอมพิวเตอร์ธุรกิจ</option><option value="10" >ปวส. เทคโนโลยีธุรกิจดิจิทัล</option></select></div>
+  <div class="col-6 col-lg-1"><label class="visually-hidden" for="ayear">ปีที่ลงนาม</label><select id="ayear" name="year" class="form-select"><option value="">ทุกปี</option>
+    <option value="2026" >2569</option><option value="2025" >2568</option><option value="2024" >2567</option><option value="2023" >2566</option></select></div>
+  <div class="col-lg-2 d-flex gap-1"><button class="btn btn-navy flex-fill"><i class="bi bi-funnel" aria-hidden="true"></i> กรอง</button><a class="btn btn-outline-secondary" href="mou_list.php.html" title="ล้างตัวกรอง" aria-label="ล้างตัวกรอง"><i class="bi bi-x-lg" aria-hidden="true"></i></a></div>
+</div></form>
+
+<div class="panel fade-up delay-2"><div class="table-responsive">
+<table class="table table-hover table-sm js-dt align-middle" data-order='[4,"asc"]'>
+  <caption class="visually-hidden">รายการ MOU 8 รายการ</caption>
+  <thead class="table-light"><tr><th>เลขที่</th><th>ชื่อเรื่อง / หน่วยงาน</th><th>ประเภท</th><th>ลงนาม</th><th>สิ้นสุด</th><th>สถานะ</th><th>เผยแพร่</th><th class="no-sort"><span class="visually-hidden">การจัดการ</span></th></tr></thead>
+  <tbody>
+      <tr>
+      <td class="text-nowrap">MOU-011/2569</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=11.html">ความร่วมมือพัฒนาทักษะการตลาดดิจิทัลและสร้างเนื้อหาออนไลน์</a><div class="small text-muted">บริษัท เอเจนซี่ ดิจิทัล มาร์เก็ตติ้ง จำกัด</div></div></div></td>
+      <td class="text-nowrap">สถานประกอบการ</td>
+      <td class="text-nowrap" data-order="2026-06-20">20 มิ.ย. 2569</td>
+      <td class="text-nowrap" data-order="2029-06-19">19 มิ.ย. 2572</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=11.html" title="ดู" aria-label="ดู MOU MOU-011/2569"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=11.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-011/2569"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=11.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-011/2569"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-011/2569 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="11">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-011/2569"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-010/2569</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=10.html">ความร่วมมือจัดการศึกษาทวิภาคี สาขาการจัดการโลจิสติกส์</a><div class="small text-muted">บริษัท โลจิสติกส์ เอ็กซ์เพรส จำกัด</div></div></div></td>
+      <td class="text-nowrap">สถานประกอบการ</td>
+      <td class="text-nowrap" data-order="2026-01-15">15 ม.ค. 2569</td>
+      <td class="text-nowrap" data-order="2029-01-14">14 ม.ค. 2572</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=10.html" title="ดู" aria-label="ดู MOU MOU-010/2569"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=10.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-010/2569"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=10.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-010/2569"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-010/2569 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="10">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-010/2569"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-009/2568</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=9.html">ความร่วมมือส่งเสริมทักษะวิชาชีพด้านธุรกิจค้าปลีก</a><div class="small text-muted">สมาคมการค้าผู้ประกอบการค้าปลีกไทย</div></div></div></td>
+      <td class="text-nowrap">อื่นๆ</td>
+      <td class="text-nowrap" data-order="2025-09-05">5 ก.ย. 2568</td>
+      <td class="text-nowrap" data-order="2028-09-04">4 ก.ย. 2571</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=9.html" title="ดู" aria-label="ดู MOU MOU-009/2568"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=9.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-009/2568"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=9.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-009/2568"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-009/2568 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="9">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-009/2568"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-007/2568</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=7.html">ความร่วมมือส่งเสริมผู้ประกอบการรุ่นใหม่และการค้าปลีก</a><div class="small text-muted">สำนักงานพาณิชย์จังหวัดสมุทรปราการ</div></div></div></td>
+      <td class="text-nowrap">หน่วยงานรัฐ</td>
+      <td class="text-nowrap" data-order="2025-04-01">1 เม.ย. 2568</td>
+      <td class="text-nowrap" data-order="2027-03-31">31 มี.ค. 2570</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=7.html" title="ดู" aria-label="ดู MOU MOU-007/2568"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=7.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-007/2568"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=7.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-007/2568"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-007/2568 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="7">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-007/2568"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-006/2568</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=6.html">ความร่วมมือแลกเปลี่ยนเรียนรู้และสนับสนุนการศึกษาต่อระดับปริญญาตรี</a><div class="small text-muted">มหาวิทยาลัยราชภัฏสวนสุนันทา</div></div></div></td>
+      <td class="text-nowrap">สถาบันการศึกษา</td>
+      <td class="text-nowrap" data-order="2025-02-14">14 ก.พ. 2568</td>
+      <td class="text-nowrap" data-order="2028-02-13">13 ก.พ. 2571</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=6.html" title="ดู" aria-label="ดู MOU MOU-006/2568"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=6.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-006/2568"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=6.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-006/2568"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-006/2568 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="6">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-006/2568"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-005/2567</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=5.html">ความร่วมมือทางวิชาการ การเทียบโอนหน่วยกิตและศึกษาต่อ ปวส.-ปริญญาตรี</a><div class="small text-muted">มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ</div></div></div></td>
+      <td class="text-nowrap">สถาบันการศึกษา</td>
+      <td class="text-nowrap" data-order="2024-05-02">2 พ.ค. 2567</td>
+      <td class="text-nowrap" data-order="2029-05-01">1 พ.ค. 2572</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=5.html" title="ดู" aria-label="ดู MOU MOU-005/2567"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=5.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-005/2567"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=5.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-005/2567"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-005/2567 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="5">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-005/2567"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-004/2567</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=4.html">ความร่วมมือพัฒนาหลักสูตรคอมพิวเตอร์ธุรกิจและเทคโนโลยีดิจิทัล</a><div class="small text-muted">บริษัท ไอที โซลูชั่น พลัส จำกัด</div></div></div></td>
+      <td class="text-nowrap">สถานประกอบการ</td>
+      <td class="text-nowrap" data-order="2024-03-20">20 มี.ค. 2567</td>
+      <td class="text-nowrap" data-order="2029-03-19">19 มี.ค. 2572</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=4.html" title="ดู" aria-label="ดู MOU MOU-004/2567"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=4.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-004/2567"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=4.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-004/2567"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-004/2567 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="4">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-004/2567"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+      <tr>
+      <td class="text-nowrap">MOU-001/2566</td>
+      <td><div class="d-flex gap-2 align-items-center">        <div><a class="fw-semibold text-decoration-none" href="mou_view.php@id=1.html">ความร่วมมือจัดการศึกษาระบบทวิภาคี สาขาการขายหน้าร้าน</a><div class="small text-muted">บริษัท ซีพี ออลล์ จำกัด (มหาชน)</div></div></div></td>
+      <td class="text-nowrap">สถานประกอบการ</td>
+      <td class="text-nowrap" data-order="2023-06-01">1 มิ.ย. 2566</td>
+      <td class="text-nowrap" data-order="2028-05-31">31 พ.ค. 2571</td>
+      <td><span class="badge status-badge st-active bg-success ">มีผลบังคับใช้</span></td>
+      <td class="text-nowrap" data-order="1"><i class="bi bi-eye text-success" aria-hidden="true"></i> <span class="small">เผยแพร่</span></td>
+      <td class="text-nowrap text-end">
+                <a class="btn btn-sm btn-outline-secondary" href="mou_view.php@id=1.html" title="ดู" aria-label="ดู MOU MOU-001/2566"><i class="bi bi-eye" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="mou_form.php@id=1.html" title="แก้ไข" aria-label="แก้ไข MOU MOU-001/2566"><i class="bi bi-pencil" aria-hidden="true"></i></a>
+        <a class="btn btn-sm btn-outline-success" href="renewals.php@mou_id=1.html" title="ต่ออายุ" aria-label="ต่ออายุ MOU MOU-001/2566"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></a>
+        <form method="post" action="#" class="d-inline" data-confirm="ลบ MOU เลขที่ MOU-001/2566 ?  (ลบแบบซ่อน กู้คืนได้ภายหลัง)">
+          <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="action" value="delete_mou"><input type="hidden" name="id" value="1">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="ลบ" aria-label="ลบ MOU MOU-001/2566"><i class="bi bi-trash" aria-hidden="true"></i></button></form>
+                      </td>
+    </tr>
+    </tbody>
+</table></div></div>
+    </div>
+  </div>
+</div>
+<script src="../assets/vendor/jquery/jquery.min.js@v=1795594268"></script><script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js@v=1795594266"></script><script src="../assets/vendor/datatables/jquery.dataTables.min.js@v=1795594268"></script><script src="../assets/vendor/datatables/dataTables.bootstrap5.min.js@v=1795594268"></script><script src="../assets/vendor/sweetalert2/sweetalert2.all.min.js@v=1795594269"></script><script src="../assets/js/app.js@v=1795594254"></script><script src="../demo-banner.js"></script></body>
+</html>

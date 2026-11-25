@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="th" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script nonce="Xq0awsptDYkMCrpcVM0MQg==">(function(){var t;try{t=localStorage.getItem('mou-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-bs-theme',t)})();</script><meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>แดชบอร์ด | หลังบ้าน MOU</title>
+<link href="../assets/vendor/fonts/fonts.css@v=1795594268.css" rel="stylesheet"><link href="../assets/vendor/bootstrap/bootstrap.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/datatables/dataTables.bootstrap5.min.css@v=1795594268.css" rel="stylesheet"><link href="../assets/css/style.css@v=1795594253.css" rel="stylesheet"><link href="../assets/css/admin.css@v=1795594253.css" rel="stylesheet"></head>
+<body class="admin-body">
+<div class="page-progress" id="pageLoader" aria-hidden="true"></div><div class="admin-wrap">
+  <aside class="admin-side offcanvas-lg offcanvas-start" id="sideMenu" tabindex="-1" aria-label="เมนูหลังบ้าน">
+    <div class="d-flex align-items-center">
+      <a class="side-brand flex-grow-1" href="index.php.html"><span class="logo-slot bounce-icon" aria-hidden="true"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>
+        <div class="lh-sm"><small class="text-gold d-block">ระบบหลังบ้าน MOU</small>วิทยาลัยพณิชยการบางนา</div></a>
+      <button type="button" class="btn-close btn-close-white d-lg-none me-3" data-bs-dismiss="offcanvas" data-bs-target="#sideMenu" aria-label="ปิดเมนู"></button>
+    </div>
+    <nav class="nav flex-column mt-1">
+      <div class="side-label">ภาพรวม</div>        <a class="nav-link active" aria-current="page" href="index.php.html">
+          <i class="bi bi-speedometer2" aria-hidden="true"></i> <span>แดชบอร์ด</span>
+                  </a>
+              <a class="nav-link "  href="reports.php.html">
+          <i class="bi bi-bar-chart-line" aria-hidden="true"></i> <span>รายงาน</span>
+                  </a>
+      <div class="side-label">งานข้อตกลง</div>        <a class="nav-link "  href="mou_list.php.html">
+          <i class="bi bi-file-earmark-text" aria-hidden="true"></i> <span>ข้อตกลง MOU</span>
+          <span class="badge rounded-pill bg-warning text-dark ms-auto ">2<span class="visually-hidden"> รายการใกล้หมดอายุ</span></span>        </a>
+              <a class="nav-link "  href="renewals.php.html">
+          <i class="bi bi-arrow-repeat" aria-hidden="true"></i> <span>ต่ออายุสัญญา</span>
+                  </a>
+              <a class="nav-link "  href="proposals.php.html">
+          <i class="bi bi-inbox" aria-hidden="true"></i> <span>ข้อเสนอความร่วมมือ</span>
+                  </a>
+      <div class="side-label">ข้อมูลหลัก</div>        <a class="nav-link "  href="partners.php.html">
+          <i class="bi bi-buildings" aria-hidden="true"></i> <span>หน่วยงานคู่ความร่วมมือ</span>
+                  </a>
+              <a class="nav-link "  href="programs.php.html">
+          <i class="bi bi-mortarboard" aria-hidden="true"></i> <span>สาขาวิชา</span>
+                  </a>
+              <a class="nav-link "  href="news.php.html">
+          <i class="bi bi-newspaper" aria-hidden="true"></i> <span>ข่าวประชาสัมพันธ์</span>
+                  </a>
+      <div class="side-label">ระบบ</div>        <a class="nav-link "  href="users.php.html">
+          <i class="bi bi-people" aria-hidden="true"></i> <span>ผู้ใช้งาน</span>
+                  </a>
+              <a class="nav-link "  href="logs.php.html">
+          <i class="bi bi-clock-history" aria-hidden="true"></i> <span>Activity Log</span>
+                  </a>
+              <a class="nav-link "  href="settings.php.html">
+          <i class="bi bi-gear" aria-hidden="true"></i> <span>ตั้งค่าเว็บ</span>
+                  </a>
+            <div class="side-label">เว็บไซต์</div>
+      <a class="nav-link" href="../public/index.php.html" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> <span>ดูเว็บไซต์สาธารณะ<span class="visually-hidden"> (เปิดแท็บใหม่)</span></span></a>
+    </nav>
+    <div class="side-foot"><i class="bi bi-shield-lock" aria-hidden="true"></i> เข้าสู่ระบบในชื่อ admin</div>
+  </aside>
+  <div class="admin-main">
+    <header class="admin-top">
+      <button class="btn btn-soft btn-icon d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sideMenu" aria-controls="sideMenu" aria-label="เปิดเมนู"><i class="bi bi-list" aria-hidden="true"></i></button>
+      <div class="flex-grow-1 min-w-0">
+        <div class="crumb d-none d-sm-block"><i class="bi bi-house-door" aria-hidden="true"></i> หลังบ้าน</div>
+        <h1 class="mb-0 text-truncate">แดชบอร์ด</h1>
+      </div>
+              <a class="btn btn-sm btn-warning d-none d-md-inline-flex align-items-center gap-1" href="mou_list.php@status=expiring.html"><i class="bi bi-bell-fill" aria-hidden="true"></i> ใกล้หมดอายุ 2 รายการ</a>
+                  <div class="dropdown">
+        <button type="button" class="btn btn-soft btn-icon position-relative" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="การแจ้งเตือน 2 รายการใหม่" title="การแจ้งเตือน"><i class="bi bi-bell" aria-hidden="true"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:.72rem" aria-hidden="true">2</span></button>
+        <div class="dropdown-menu dropdown-menu-end p-0 overflow-hidden" style="width:min(22rem,92vw)">
+          <div class="px-3 py-2 fw-semibold border-bottom"><i class="bi bi-bell me-1" aria-hidden="true"></i> การแจ้งเตือน (2)</div>
+                              <form method="post" action="#" class="border-bottom"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="id" value="2">
+            <button type="submit" class="dropdown-item text-wrap small py-2"><i class="bi bi-hourglass-split text-warning me-1" aria-hidden="true"></i>MOU MOU-003/2567 (ธนาคารกรุงเทพ จำกัด (มหาชน) สาขาบางนา) จะหมดอายุ 9 ม.ค. 2570 — เหลือ 45 วัน              <span class="d-block text-muted meta-sm">25 พ.ย. 2569 เวลา 15:11 น.</span></button></form>
+                    <form method="post" action="#" class="border-bottom"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="id" value="1">
+            <button type="submit" class="dropdown-item text-wrap small py-2"><i class="bi bi-hourglass-split text-warning me-1" aria-hidden="true"></i>MOU MOU-008/2568 (สำนักงานเขตบางนา กรุงเทพมหานคร) จะหมดอายุ 31 ธ.ค. 2569 — เหลือ 36 วัน              <span class="d-block text-muted meta-sm">25 พ.ย. 2569 เวลา 15:11 น.</span></button></form>
+                    <form method="post" action="#" class="text-center py-1"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="all" value="1">
+            <button type="submit" class="btn btn-sm btn-link text-decoration-none">ทำเครื่องหมายว่าอ่านแล้วทั้งหมด</button></form>        </div>
+      </div>
+            <button type="button" class="theme-toggle on-light" data-theme-toggle aria-label="โหมดมืด" aria-pressed="false" title="สลับโหมดมืด/สว่าง"><i class="bi bi-moon-stars-fill ic-moon" aria-hidden="true"></i><i class="bi bi-sun-fill ic-sun" aria-hidden="true"></i></button>      <div class="dropdown">
+        <button type="button" class="user-chip dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="บัญชีผู้ใช้: ผู้ดูแลระบบ">
+          <span class="avatar" aria-hidden="true">ผ</span>
+          <span class="d-none d-md-inline text-start lh-sm"><span class="d-block small fw-semibold">ผู้ดูแลระบบ</span>
+            <span class="d-block text-muted meta-sm">ผู้ดูแลระบบ</span></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li class="d-md-none"><span class="dropdown-item-text small"><strong>ผู้ดูแลระบบ</strong><br><span class="text-muted">ผู้ดูแลระบบ</span></span></li>
+          <li><a class="dropdown-item" href="profile.php.html"><i class="bi bi-key me-2" aria-hidden="true"></i>เปลี่ยนรหัสผ่าน</a></li>
+          <li><button type="button" class="dropdown-item" data-theme-toggle data-theme-label><i class="bi bi-circle-half me-2" aria-hidden="true"></i>สลับโหมดมืด/สว่าง</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><form method="post" action="#"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><button type="submit" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right me-2" aria-hidden="true"></i>ออกจากระบบ</button></form></li>
+        </ul>
+      </div>
+    </header>
+    <div class="admin-content fade-in">
+<div class="page-head fade-up">
+  <div><div class="sub">25 พฤศจิกายน 2569</div><h2 class="title">สวัสดีตอนบ่าย, ผู้ดูแลระบบ</h2></div>
+  <a class="btn btn-gold" href="mou_form.php.html"><i class="bi bi-plus-lg" aria-hidden="true"></i> เพิ่ม MOU ใหม่</a></div>
+<div class="alert alert-warning d-flex align-items-center gap-2 fade-up delay-1"><i class="bi bi-bell-fill fs-5" aria-hidden="true"></i>
+  <span>มี MOU ใกล้หมดอายุภายใน 90 วัน จำนวน <strong>2</strong> รายการ</span>
+  <a class="ms-auto btn btn-sm btn-warning" href="mou_list.php@status=expiring.html">ดูรายการ <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+<div class="alert alert-info d-flex align-items-center gap-2 fade-up delay-1"><i class="bi bi-database-exclamation fs-5" aria-hidden="true"></i>
+  <span>ยังไม่เคยสำรองข้อมูลระบบ — ควรดาวน์โหลดไฟล์สำรองเก็บไว้นอกเครื่องเซิร์ฟเวอร์</span>
+  <a class="ms-auto btn btn-sm btn-outline-primary text-nowrap" href="settings.php.html">ไปหน้าสำรองข้อมูล <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+
+<div class="row g-3 mb-4 stagger scale">
+    <div class="col-6 col-xl-3"><a class="card card-stat t-navy text-decoration-none" href="mou_list.php.html"><div class="card-body">
+    <span class="ic ic-navy"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+    <div><div class="num" data-count="12">12</div><div class="lbl">MOU ทั้งหมด</div></div></div></a></div>
+    <div class="col-6 col-xl-3"><a class="card card-stat t-success text-decoration-none" href="mou_list.php@status=active.html"><div class="card-body">
+    <span class="ic ic-success"><i class="bi bi-patch-check" aria-hidden="true"></i></span>
+    <div><div class="num" data-count="8">8</div><div class="lbl">มีผลบังคับใช้</div></div></div></a></div>
+    <div class="col-6 col-xl-3"><a class="card card-stat t-warning text-decoration-none" href="mou_list.php@status=expiring.html"><div class="card-body">
+    <span class="ic ic-warning"><i class="bi bi-hourglass-split" aria-hidden="true"></i></span>
+    <div><div class="num" data-count="2">2</div><div class="lbl">ใกล้หมดอายุ (90 วัน)</div></div></div></a></div>
+    <div class="col-6 col-xl-3"><a class="card card-stat t-danger text-decoration-none" href="mou_list.php@status=expired.html"><div class="card-body">
+    <span class="ic ic-danger"><i class="bi bi-x-octagon" aria-hidden="true"></i></span>
+    <div><div class="num" data-count="1">1</div><div class="lbl">หมดอายุ</div></div></div></a></div>
+  </div>
+
+<div class="row g-3">
+  <div class="col-lg-4 reveal"><div class="panel h-100"><h2 class="panel-title"><i class="bi bi-pie-chart" aria-hidden="true"></i> MOU ตามประเภทหน่วยงาน</h2><div style="height:260px"><canvas id="chType" role="img" aria-label="MOU ตามประเภทหน่วยงาน: สถานประกอบการ 7 รายการ, สถาบันการศึกษา 2 รายการ, หน่วยงานรัฐ 2 รายการ, อื่นๆ 1 รายการ"></canvas></div>
+    <details class="mt-2 small"><summary class="text-muted">ดูข้อมูลเป็นตาราง</summary><table class="table table-sm mt-2 mb-0"><caption class="visually-hidden">ข้อมูลกราฟ: MOU ตามประเภทหน่วยงาน</caption><thead><tr><th scope="col">ประเภทหน่วยงาน</th><th scope="col" class="text-end">จำนวน MOU</th></tr></thead><tbody><tr><th scope="row" class="fw-normal">สถานประกอบการ</th><td class="text-end">7</td></tr><tr><th scope="row" class="fw-normal">สถาบันการศึกษา</th><td class="text-end">2</td></tr><tr><th scope="row" class="fw-normal">หน่วยงานรัฐ</th><td class="text-end">2</td></tr><tr><th scope="row" class="fw-normal">อื่นๆ</th><td class="text-end">1</td></tr></tbody></table></details></div></div>
+  <div class="col-lg-8 reveal"><div class="panel h-100"><h2 class="panel-title"><i class="bi bi-bar-chart" aria-hidden="true"></i> จำนวน MOU ที่ลงนามในแต่ละปี (พ.ศ.)</h2><div style="height:260px"><canvas id="chYear" role="img" aria-label="จำนวน MOU ที่ลงนามในแต่ละปี: 2566 2 รายการ, 2567 3 รายการ, 2568 4 รายการ, 2569 3 รายการ"></canvas></div>
+    <details class="mt-2 small"><summary class="text-muted">ดูข้อมูลเป็นตาราง</summary><table class="table table-sm mt-2 mb-0"><caption class="visually-hidden">ข้อมูลกราฟ: จำนวน MOU ที่ลงนามในแต่ละปี</caption><thead><tr><th scope="col">ปี พ.ศ.</th><th scope="col" class="text-end">จำนวน MOU</th></tr></thead><tbody><tr><th scope="row" class="fw-normal">2566</th><td class="text-end">2</td></tr><tr><th scope="row" class="fw-normal">2567</th><td class="text-end">3</td></tr><tr><th scope="row" class="fw-normal">2568</th><td class="text-end">4</td></tr><tr><th scope="row" class="fw-normal">2569</th><td class="text-end">3</td></tr></tbody></table></details></div></div>
+  <div class="col-lg-6 reveal"><div class="panel"><h2 class="panel-title"><i class="bi bi-mortarboard" aria-hidden="true"></i> MOU ตามสาขาวิชา (10 อันดับ)</h2><div style="height:300px"><canvas id="chProg" role="img" aria-label="MOU ตามสาขาวิชา 10 อันดับแรก: ปวช. การตลาด 6 รายการ, ปวส. การตลาด 6 รายการ, ปวช. การขายหน้าร้าน 3 รายการ, ปวช. การบัญชี 3 รายการ, ปวช. คอมพิวเตอร์ธุรกิจ 3 รายการ, ปวส. การบัญชี 3 รายการ, ปวส. เทคโนโลยีธุรกิจดิจิทัล 3 รายการ, ปวส. คอมพิวเตอร์ธุรกิจ 2 รายการ, ปวช. การท่องเที่ยว 1 รายการ, ปวส. การจัดการโลจิสติกส์ 1 รายการ"></canvas></div>
+    <details class="mt-2 small"><summary class="text-muted">ดูข้อมูลเป็นตาราง</summary><table class="table table-sm mt-2 mb-0"><caption class="visually-hidden">ข้อมูลกราฟ: MOU ตามสาขาวิชา</caption><thead><tr><th scope="col">สาขาวิชา</th><th scope="col" class="text-end">จำนวน MOU</th></tr></thead><tbody><tr><th scope="row" class="fw-normal">ปวช. การตลาด</th><td class="text-end">6</td></tr><tr><th scope="row" class="fw-normal">ปวส. การตลาด</th><td class="text-end">6</td></tr><tr><th scope="row" class="fw-normal">ปวช. การขายหน้าร้าน</th><td class="text-end">3</td></tr><tr><th scope="row" class="fw-normal">ปวช. การบัญชี</th><td class="text-end">3</td></tr><tr><th scope="row" class="fw-normal">ปวช. คอมพิวเตอร์ธุรกิจ</th><td class="text-end">3</td></tr><tr><th scope="row" class="fw-normal">ปวส. การบัญชี</th><td class="text-end">3</td></tr><tr><th scope="row" class="fw-normal">ปวส. เทคโนโลยีธุรกิจดิจิทัล</th><td class="text-end">3</td></tr><tr><th scope="row" class="fw-normal">ปวส. คอมพิวเตอร์ธุรกิจ</th><td class="text-end">2</td></tr><tr><th scope="row" class="fw-normal">ปวช. การท่องเที่ยว</th><td class="text-end">1</td></tr><tr><th scope="row" class="fw-normal">ปวส. การจัดการโลจิสติกส์</th><td class="text-end">1</td></tr></tbody></table></details></div></div>
+  <div class="col-lg-6 reveal">
+    <div class="panel"><h2 class="panel-title"><i class="bi bi-hourglass-split" aria-hidden="true"></i> ใกล้หมดอายุ / หมดอายุ</h2>              <div class="list-row">
+          <div class="min-w-0"><a class="fw-semibold text-decoration-none" href="mou_view.php@id=2.html">MOU-002/2566</a>
+            <div class="small text-muted text-truncate">บริษัท เซ็นทรัล รีเทล คอร์ปอเรชั่น จำกัด (มหาชน)</div></div>
+          <div class="text-end small text-nowrap"><span class="badge status-badge st-expired bg-danger ">หมดอายุ</span><div class="text-muted">14 ส.ค. 2569</div></div>
+          <a class="btn btn-sm btn-outline-primary" href="renewals.php@mou_id=2.html"><i class="bi bi-arrow-repeat" aria-hidden="true"></i> ต่ออายุ</a>        </div>
+              <div class="list-row">
+          <div class="min-w-0"><a class="fw-semibold text-decoration-none" href="mou_view.php@id=8.html">MOU-008/2568</a>
+            <div class="small text-muted text-truncate">สำนักงานเขตบางนา กรุงเทพมหานคร</div></div>
+          <div class="text-end small text-nowrap"><span class="badge status-badge st-expiring bg-warning text-dark">ใกล้หมดอายุ</span><div class="text-muted">31 ธ.ค. 2569</div></div>
+          <a class="btn btn-sm btn-outline-primary" href="renewals.php@mou_id=8.html"><i class="bi bi-arrow-repeat" aria-hidden="true"></i> ต่ออายุ</a>        </div>
+              <div class="list-row">
+          <div class="min-w-0"><a class="fw-semibold text-decoration-none" href="mou_view.php@id=3.html">MOU-003/2567</a>
+            <div class="small text-muted text-truncate">ธนาคารกรุงเทพ จำกัด (มหาชน) สาขาบางนา</div></div>
+          <div class="text-end small text-nowrap"><span class="badge status-badge st-expiring bg-warning text-dark">ใกล้หมดอายุ</span><div class="text-muted">9 ม.ค. 2570</div></div>
+          <a class="btn btn-sm btn-outline-primary" href="renewals.php@mou_id=3.html"><i class="bi bi-arrow-repeat" aria-hidden="true"></i> ต่ออายุ</a>        </div>
+            </div>
+        <div class="panel"><h2 class="panel-title"><i class="bi bi-inbox" aria-hidden="true"></i> ข้อเสนอความร่วมมือใหม่<span class="panel-sub"><a href="proposals.php.html">ดูทั้งหมด</a></span></h2>            <div class="empty-state"><i class="bi bi-inbox" aria-hidden="true"></i>ไม่มีข้อเสนอใหม่</div></div>
+      </div>
+</div>
+
+<script nonce="Xq0awsptDYkMCrpcVM0MQg==">
+document.addEventListener('DOMContentLoaded', function () {
+  Chart.defaults.font.family = "'Sarabun', sans-serif";
+  // ผู้ใช้ที่ตั้งค่าลดการเคลื่อนไหว: กราฟแสดงทันทีไม่มี animation
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) Chart.defaults.animation = false;
+  var charts = [];
+  function build() {
+    charts.forEach(function (c) { c.destroy(); }); charts = [];
+    var t = MouTheme.chart();
+    Chart.defaults.color = t.text; Chart.defaults.borderColor = t.grid;
+    var grid = { color: t.grid }, bar = { borderRadius: 8, borderSkipped: false, maxBarThickness: 46 };
+    charts.push(new Chart(document.getElementById('chType'), { type: 'doughnut',
+      data: { labels: ["สถานประกอบการ","สถาบันการศึกษา","หน่วยงานรัฐ","อื่นๆ"], datasets: [{ data: [7,2,2,1], backgroundColor: t.palette, borderColor: t.surface, borderWidth: 3, hoverOffset: 10 }] },
+      options: { maintainAspectRatio: false, cutout: '62%', plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 14 } } } } }));
+    charts.push(new Chart(document.getElementById('chYear'), { type: 'bar',
+      data: { labels: ["2566","2567","2568","2569"],
+              datasets: [Object.assign({ label: 'จำนวน MOU', data: [2,3,4,3], backgroundColor: t.primary }, bar)] },
+      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, ticks: { precision: 0 }, grid: grid } } } }));
+    charts.push(new Chart(document.getElementById('chProg'), { type: 'bar',
+      data: { labels: ["ปวช. การตลาด","ปวส. การตลาด","ปวช. การขายหน้าร้าน","ปวช. การบัญชี","ปวช. คอมพิวเตอร์ธุรกิจ","ปวส. การบัญชี","ปวส. เทคโนโลยีธุรกิจดิจิทัล","ปวส. คอมพิวเตอร์ธุรกิจ","ปวช. การท่องเที่ยว","ปวส. การจัดการโลจิสติกส์"],
+              datasets: [Object.assign({ label: 'จำนวน MOU', data: [6,6,3,3,3,3,3,2,1,1], backgroundColor: t.gold }, bar)] },
+      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { precision: 0 }, grid: grid }, y: { grid: { display: false } } } } }));
+  }
+  build();
+  document.addEventListener('mou:themechange', build);   // เปลี่ยนสีกราฟตามธีม
+});
+</script>
+    </div>
+  </div>
+</div>
+<script src="../assets/vendor/jquery/jquery.min.js@v=1795594268"></script><script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js@v=1795594266"></script><script src="../assets/vendor/datatables/jquery.dataTables.min.js@v=1795594268"></script><script src="../assets/vendor/datatables/dataTables.bootstrap5.min.js@v=1795594268"></script><script src="../assets/vendor/sweetalert2/sweetalert2.all.min.js@v=1795594269"></script><script src="../assets/vendor/chartjs/chart.umd.min.js@v=1795594268"></script><script src="../assets/js/app.js@v=1795594254"></script><script src="../demo-banner.js"></script></body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="th" data-bs-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script nonce="3LBfYtJI0vrHpb6+mG4zQQ==">(function(){var t;try{t=localStorage.getItem('mou-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-bs-theme',t)})();</script><meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>แก้ไข MOU | หลังบ้าน MOU</title>
+<link href="../assets/vendor/fonts/fonts.css@v=1795594268.css" rel="stylesheet"><link href="../assets/vendor/bootstrap/bootstrap.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css@v=1795594266.css" rel="stylesheet"><link href="../assets/vendor/datatables/dataTables.bootstrap5.min.css@v=1795594268.css" rel="stylesheet"><link href="../assets/css/style.css@v=1795594253.css" rel="stylesheet"><link href="../assets/css/admin.css@v=1795594253.css" rel="stylesheet"></head>
+<body class="admin-body">
+<div class="page-progress" id="pageLoader" aria-hidden="true"></div><div class="admin-wrap">
+  <aside class="admin-side offcanvas-lg offcanvas-start" id="sideMenu" tabindex="-1" aria-label="เมนูหลังบ้าน">
+    <div class="d-flex align-items-center">
+      <a class="side-brand flex-grow-1" href="index.php.html"><span class="logo-slot bounce-icon" aria-hidden="true"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></span>
+        <div class="lh-sm"><small class="text-gold d-block">ระบบหลังบ้าน MOU</small>วิทยาลัยพณิชยการบางนา</div></a>
+      <button type="button" class="btn-close btn-close-white d-lg-none me-3" data-bs-dismiss="offcanvas" data-bs-target="#sideMenu" aria-label="ปิดเมนู"></button>
+    </div>
+    <nav class="nav flex-column mt-1">
+      <div class="side-label">ภาพรวม</div>        <a class="nav-link "  href="index.php.html">
+          <i class="bi bi-speedometer2" aria-hidden="true"></i> <span>แดชบอร์ด</span>
+                  </a>
+              <a class="nav-link "  href="reports.php.html">
+          <i class="bi bi-bar-chart-line" aria-hidden="true"></i> <span>รายงาน</span>
+                  </a>
+      <div class="side-label">งานข้อตกลง</div>        <a class="nav-link active" aria-current="page" href="mou_list.php.html">
+          <i class="bi bi-file-earmark-text" aria-hidden="true"></i> <span>ข้อตกลง MOU</span>
+          <span class="badge rounded-pill bg-warning text-dark ms-auto ">2<span class="visually-hidden"> รายการใกล้หมดอายุ</span></span>        </a>
+              <a class="nav-link "  href="renewals.php.html">
+          <i class="bi bi-arrow-repeat" aria-hidden="true"></i> <span>ต่ออายุสัญญา</span>
+                  </a>
+              <a class="nav-link "  href="proposals.php.html">
+          <i class="bi bi-inbox" aria-hidden="true"></i> <span>ข้อเสนอความร่วมมือ</span>
+                  </a>
+      <div class="side-label">ข้อมูลหลัก</div>        <a class="nav-link "  href="partners.php.html">
+          <i class="bi bi-buildings" aria-hidden="true"></i> <span>หน่วยงานคู่ความร่วมมือ</span>
+                  </a>
+              <a class="nav-link "  href="programs.php.html">
+          <i class="bi bi-mortarboard" aria-hidden="true"></i> <span>สาขาวิชา</span>
+                  </a>
+              <a class="nav-link "  href="news.php.html">
+          <i class="bi bi-newspaper" aria-hidden="true"></i> <span>ข่าวประชาสัมพันธ์</span>
+                  </a>
+      <div class="side-label">ระบบ</div>        <a class="nav-link "  href="users.php.html">
+          <i class="bi bi-people" aria-hidden="true"></i> <span>ผู้ใช้งาน</span>
+                  </a>
+              <a class="nav-link "  href="logs.php.html">
+          <i class="bi bi-clock-history" aria-hidden="true"></i> <span>Activity Log</span>
+                  </a>
+              <a class="nav-link "  href="settings.php.html">
+          <i class="bi bi-gear" aria-hidden="true"></i> <span>ตั้งค่าเว็บ</span>
+                  </a>
+            <div class="side-label">เว็บไซต์</div>
+      <a class="nav-link" href="../public/index.php.html" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> <span>ดูเว็บไซต์สาธารณะ<span class="visually-hidden"> (เปิดแท็บใหม่)</span></span></a>
+    </nav>
+    <div class="side-foot"><i class="bi bi-shield-lock" aria-hidden="true"></i> เข้าสู่ระบบในชื่อ admin</div>
+  </aside>
+  <div class="admin-main">
+    <header class="admin-top">
+      <button class="btn btn-soft btn-icon d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sideMenu" aria-controls="sideMenu" aria-label="เปิดเมนู"><i class="bi bi-list" aria-hidden="true"></i></button>
+      <div class="flex-grow-1 min-w-0">
+        <div class="crumb d-none d-sm-block"><i class="bi bi-house-door" aria-hidden="true"></i> หลังบ้าน</div>
+        <h1 class="mb-0 text-truncate">แก้ไข MOU</h1>
+      </div>
+              <a class="btn btn-sm btn-warning d-none d-md-inline-flex align-items-center gap-1" href="mou_list.php@status=expiring.html"><i class="bi bi-bell-fill" aria-hidden="true"></i> ใกล้หมดอายุ 2 รายการ</a>
+                  <div class="dropdown">
+        <button type="button" class="btn btn-soft btn-icon position-relative" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="การแจ้งเตือน 2 รายการใหม่" title="การแจ้งเตือน"><i class="bi bi-bell" aria-hidden="true"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:.72rem" aria-hidden="true">2</span></button>
+        <div class="dropdown-menu dropdown-menu-end p-0 overflow-hidden" style="width:min(22rem,92vw)">
+          <div class="px-3 py-2 fw-semibold border-bottom"><i class="bi bi-bell me-1" aria-hidden="true"></i> การแจ้งเตือน (2)</div>
+                              <form method="post" action="#" class="border-bottom"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="id" value="2">
+            <button type="submit" class="dropdown-item text-wrap small py-2"><i class="bi bi-hourglass-split text-warning me-1" aria-hidden="true"></i>MOU MOU-003/2567 (ธนาคารกรุงเทพ จำกัด (มหาชน) สาขาบางนา) จะหมดอายุ 9 ม.ค. 2570 — เหลือ 45 วัน              <span class="d-block text-muted meta-sm">25 พ.ย. 2569 เวลา 15:11 น.</span></button></form>
+                    <form method="post" action="#" class="border-bottom"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="id" value="1">
+            <button type="submit" class="dropdown-item text-wrap small py-2"><i class="bi bi-hourglass-split text-warning me-1" aria-hidden="true"></i>MOU MOU-008/2568 (สำนักงานเขตบางนา กรุงเทพมหานคร) จะหมดอายุ 31 ธ.ค. 2569 — เหลือ 36 วัน              <span class="d-block text-muted meta-sm">25 พ.ย. 2569 เวลา 15:11 น.</span></button></form>
+                    <form method="post" action="#" class="text-center py-1"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><input type="hidden" name="all" value="1">
+            <button type="submit" class="btn btn-sm btn-link text-decoration-none">ทำเครื่องหมายว่าอ่านแล้วทั้งหมด</button></form>        </div>
+      </div>
+            <button type="button" class="theme-toggle on-light" data-theme-toggle aria-label="โหมดมืด" aria-pressed="false" title="สลับโหมดมืด/สว่าง"><i class="bi bi-moon-stars-fill ic-moon" aria-hidden="true"></i><i class="bi bi-sun-fill ic-sun" aria-hidden="true"></i></button>      <div class="dropdown">
+        <button type="button" class="user-chip dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="บัญชีผู้ใช้: ผู้ดูแลระบบ">
+          <span class="avatar" aria-hidden="true">ผ</span>
+          <span class="d-none d-md-inline text-start lh-sm"><span class="d-block small fw-semibold">ผู้ดูแลระบบ</span>
+            <span class="d-block text-muted meta-sm">ผู้ดูแลระบบ</span></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li class="d-md-none"><span class="dropdown-item-text small"><strong>ผู้ดูแลระบบ</strong><br><span class="text-muted">ผู้ดูแลระบบ</span></span></li>
+          <li><a class="dropdown-item" href="profile.php.html"><i class="bi bi-key me-2" aria-hidden="true"></i>เปลี่ยนรหัสผ่าน</a></li>
+          <li><button type="button" class="dropdown-item" data-theme-toggle data-theme-label><i class="bi bi-circle-half me-2" aria-hidden="true"></i>สลับโหมดมืด/สว่าง</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><form method="post" action="#"><input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c"><button type="submit" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right me-2" aria-hidden="true"></i>ออกจากระบบ</button></form></li>
+        </ul>
+      </div>
+    </header>
+    <div class="admin-content fade-in">
+<div class="page-head fade-up">
+  <div><div class="sub">แก้ไขข้อตกลงเลขที่ MOU-005/2567</div>
+    <h2 class="title">แก้ไข MOU</h2></div>
+  <a class="btn btn-outline-secondary" href="mou_view.php@id=5.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> กลับ</a>
+</div>
+<p class="small text-muted"><span class="text-danger" aria-hidden="true">*</span> หมายถึงช่องที่ต้องกรอก</p>
+<form method="post" id="mouForm" enctype="multipart/form-data" novalidate class="stagger" data-dirty-guard>
+  <input type="hidden" name="csrf_token" value="1a7f4583897c97ec1a085742c6c56035e5341fef259adbc3024155a8b55f655c">    <div class="panel"><h2><i class="bi bi-info-circle" aria-hidden="true"></i> ข้อมูลหลัก</h2><div class="row g-3">
+    <div class="col-md-4"><label class="form-label" for="f-mou_no">เลขที่ MOU <span class="text-danger" aria-hidden="true">*</span></label><input name="mou_no" id="f-mou_no" class="form-control" required maxlength="60" value="MOU-005/2567"></div>
+    <div class="col-md-8"><label class="form-label" for="f-title">ชื่อเรื่อง <span class="text-danger" aria-hidden="true">*</span></label><input name="title" id="f-title" class="form-control" required maxlength="300" value="ความร่วมมือทางวิชาการ การเทียบโอนหน่วยกิตและศึกษาต่อ ปวส.-ปริญญาตรี"></div>
+    <div class="col-md-8"><label class="form-label" for="f-partner_id">หน่วยงานคู่ความร่วมมือ <span class="text-danger" aria-hidden="true">*</span></label>
+      <div class="input-group">
+      <select name="partner_id" id="f-partner_id" class="form-select" required><option value="">เลือกหน่วยงาน...</option>
+        <option value="3" >ธนาคารกรุงเทพ จำกัด (มหาชน) สาขาบางนา (สถานประกอบการ)</option><option value="1" >บริษัท ซีพี ออลล์ จำกัด (มหาชน) (สถานประกอบการ)</option><option value="2" >บริษัท เซ็นทรัล รีเทล คอร์ปอเรชั่น จำกัด (มหาชน) (สถานประกอบการ)</option><option value="11" >บริษัท เอเจนซี่ ดิจิทัล มาร์เก็ตติ้ง จำกัด (สถานประกอบการ)</option><option value="10" >บริษัท โลจิสติกส์ เอ็กซ์เพรส จำกัด (สถานประกอบการ)</option><option value="4" >บริษัท ไอที โซลูชั่น พลัส จำกัด (สถานประกอบการ)</option><option value="6" >มหาวิทยาลัยราชภัฏสวนสุนันทา (สถาบันการศึกษา)</option><option value="5" selected>มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ (สถาบันการศึกษา)</option><option value="9" >สมาคมการค้าผู้ประกอบการค้าปลีกไทย (อื่นๆ)</option><option value="7" >สำนักงานพาณิชย์จังหวัดสมุทรปราการ (หน่วยงานรัฐ)</option><option value="8" >สำนักงานเขตบางนา กรุงเทพมหานคร (หน่วยงานรัฐ)</option><option value="12" >โรงแรมบางนา ฮอสพิทาลิตี้ จำกัด (สถานประกอบการ)</option></select>
+      <button type="button" class="btn btn-outline-secondary" id="reloadPartners" title="โหลดรายชื่อหน่วยงานใหม่" aria-label="โหลดรายชื่อหน่วยงานใหม่"><i class="bi bi-arrow-clockwise" aria-hidden="true"></i></button></div>
+      <div class="form-text"><a href="partners.php@action=new.html" target="_blank" rel="noopener" data-no-loader>+ เพิ่มหน่วยงานใหม่ <span class="small">(เปิดแท็บใหม่)</span></a> — เพิ่มเสร็จแล้วกลับมาที่แท็บนี้ รายชื่อจะอัปเดตเอง ข้อมูลที่กรอกไว้ไม่หาย</div>
+      </div>
+    <div class="col-md-4"><label class="form-label" for="f-responsible">ผู้รับผิดชอบ (ภายใน)</label><input name="responsible" id="f-responsible" class="form-control" maxlength="150" value="อ.วิไล วิชาการ"></div>
+        <div class="col-md-3"><label class="form-label" for="f-sign_date">วันที่ลงนาม <span class="text-danger" aria-hidden="true">*</span></label><input type="date" name="sign_date" id="f-sign_date" class="form-control js-date" required value="2024-05-02" aria-describedby="f-sign_date-be"><div class="form-text js-be" id="f-sign_date-be"></div></div>
+        <div class="col-md-3"><label class="form-label" for="f-start_date">วันที่เริ่ม <span class="text-danger" aria-hidden="true">*</span></label><input type="date" name="start_date" id="f-start_date" class="form-control js-date" required value="2024-05-02" aria-describedby="f-start_date-be"><div class="form-text js-be" id="f-start_date-be"></div></div>
+        <div class="col-md-3"><label class="form-label" for="f-end_date">วันที่สิ้นสุด <span class="text-danger" aria-hidden="true">*</span></label><input type="date" name="end_date" id="f-end_date" class="form-control js-date" required value="2029-05-01" aria-describedby="f-end_date-be"><div class="form-text js-be" id="f-end_date-be"></div></div>
+        <div class="col-md-3"><label class="form-label" for="f-duration_years">ระยะเวลา (ปี)</label><input name="duration_years" type="number" step="0.1" min="0" inputmode="decimal" id="f-duration_years" class="form-control" value="5.0" aria-describedby="f-duration_years-help"><div class="form-text" id="f-duration_years-help">เว้นว่างได้ ระบบคำนวณจากวันที่ให้</div></div>
+    <div class="col-md-6"><label class="form-label" for="f-signer_college">ผู้ลงนามฝ่ายวิทยาลัย</label><input name="signer_college" id="f-signer_college" class="form-control" maxlength="200" value="ผู้อำนวยการวิทยาลัยพณิชยการบางนา"></div>
+    <div class="col-md-6"><label class="form-label" for="f-signer_partner">ผู้ลงนามฝ่ายคู่ความร่วมมือ</label><input name="signer_partner" id="f-signer_partner" class="form-control" maxlength="200" value="อธิการบดี มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ"></div>
+  </div></div>
+
+  <div class="panel"><h2><i class="bi bi-journal-text" aria-hidden="true"></i> เนื้อหาข้อตกลง</h2><div class="row g-3">
+    <div class="col-12"><label class="form-label" for="f-objective">วัตถุประสงค์</label><textarea name="objective" id="f-objective" class="form-control" rows="3">เพื่อเปิดโอกาสศึกษาต่อเนื่อง</textarea></div>
+    <div class="col-12"><label class="form-label" for="f-summary">สาระสำคัญ</label><textarea name="summary" id="f-summary" class="form-control" rows="3">เทียบโอนผลการเรียนและแลกเปลี่ยนบุคลากร</textarea></div>
+    <div class="col-12"><label class="form-label" for="f-scope">ขอบเขตความร่วมมือ</label><textarea name="scope" id="f-scope" class="form-control" rows="3">เทียบโอนหน่วยกิต ศึกษาดูงาน ใช้ห้องปฏิบัติการร่วมกัน</textarea></div>
+    <div class="col-12"><label class="form-label" for="f-benefits">สิทธิประโยชน์ของนักศึกษา (หนึ่งรายการต่อหนึ่งบรรทัด)</label><textarea name="benefits" id="f-benefits" class="form-control" rows="4">เทียบโอนหน่วยกิตเข้าศึกษาต่อระดับปริญญาตรีได้
+ใช้ห้องสมุดและห้องปฏิบัติการร่วมกัน</textarea></div>
+  </div></div>
+
+  <div class="panel"><h2><i class="bi bi-diagram-3" aria-hidden="true"></i> สาขาวิชาและประเภทความร่วมมือ</h2><div class="row g-3">
+    <fieldset class="col-md-6 form-group-set"><legend class="form-label">สาขาวิชาที่เกี่ยวข้อง</legend>
+      <div class="check-box">
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p5" value="5" >
+        <label class="form-check-label" for="p5">ปวช. การขายหน้าร้าน</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p2" value="2" >
+        <label class="form-check-label" for="p2">ปวช. การตลาด</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p6" value="6" >
+        <label class="form-check-label" for="p6">ปวช. การท่องเที่ยว</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p1" value="1" >
+        <label class="form-check-label" for="p1">ปวช. การบัญชี</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p3" value="3" >
+        <label class="form-check-label" for="p3">ปวช. การเลขานุการ</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p4" value="4" >
+        <label class="form-check-label" for="p4">ปวช. คอมพิวเตอร์ธุรกิจ</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p11" value="11" >
+        <label class="form-check-label" for="p11">ปวส. การจัดการโลจิสติกส์</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p8" value="8" checked>
+        <label class="form-check-label" for="p8">ปวส. การตลาด</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p7" value="7" checked>
+        <label class="form-check-label" for="p7">ปวส. การบัญชี</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p9" value="9" checked>
+        <label class="form-check-label" for="p9">ปวส. คอมพิวเตอร์ธุรกิจ</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="programs[]" id="p10" value="10" checked>
+        <label class="form-check-label" for="p10">ปวส. เทคโนโลยีธุรกิจดิจิทัล</label></div></div></fieldset>
+    <fieldset class="col-md-6 form-group-set"><legend class="form-label">ประเภทความร่วมมือ</legend>
+      <div class="check-box">
+      <div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c1" value="1" >
+        <label class="form-check-label" for="c1">ทวิภาคี</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c2" value="2" >
+        <label class="form-check-label" for="c2">ฝึกงาน/ฝึกประสบการณ์</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c3" value="3" >
+        <label class="form-check-label" for="c3">พัฒนาหลักสูตร</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c4" value="4" checked>
+        <label class="form-check-label" for="c4">แลกเปลี่ยนนักเรียน</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c5" value="5" checked>
+        <label class="form-check-label" for="c5">วิชาการ</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c6" value="6" >
+        <label class="form-check-label" for="c6">วิจัย</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="categories[]" id="c7" value="7" >
+        <label class="form-check-label" for="c7">ทุนการศึกษา</label></div></div></fieldset>
+  </div></div>
+
+  <div class="panel"><h2><i class="bi bi-shield-lock" aria-hidden="true"></i> ข้อมูลภายในและการเผยแพร่</h2><div class="row g-3">
+    <div class="col-md-4"><label class="form-label" for="f-budget">งบประมาณ (บาท) <span class="badge bg-secondary">ภายใน ไม่แสดงสาธารณะ</span></label><input name="budget" inputmode="decimal" id="f-budget" class="form-control" value=""></div>
+    <div class="col-md-4"><label class="form-label" for="f-student_benefit_count">จำนวนนักศึกษาที่ได้รับประโยชน์</label><input type="number" min="0" inputmode="numeric" name="student_benefit_count" id="f-student_benefit_count" class="form-control" value="90"></div>
+    <div class="col-md-4"><label class="form-label" for="f-status">สถานะ</label>
+      <select name="status" id="f-status" class="form-select">
+        <option value="draft" >ฉบับร่าง</option>
+        <option value="active" selected>มีผลบังคับใช้ (ระบบคำนวณใกล้หมดอายุ/หมดอายุให้อัตโนมัติ)</option>
+        <option value="cancelled" >ยกเลิก</option></select></div>
+    <div class="col-12"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" name="is_public" id="is_public" value="1" checked>
+      <label class="form-check-label" for="is_public">เผยแพร่บนเว็บไซต์สาธารณะ (ฉบับร่างและยกเลิกจะไม่แสดงแม้เปิดตัวเลือกนี้)</label></div></div>
+    <div class="col-12"><label class="form-label" for="f-note">หมายเหตุภายใน</label><textarea name="note" id="f-note" class="form-control" rows="2"></textarea></div>
+  </div></div>
+
+  <!-- รูปภาพประกอบรายละเอียด (v2) -->
+  <div class="panel" id="images"><h2><i class="bi bi-images" aria-hidden="true"></i> รูปภาพประกอบรายละเอียด <span class="panel-sub">JPG / PNG / WebP ไม่เกิน 5 MB ต่อรูป · สูงสุด 30 รูป</span></h2>
+            <label class="dropzone d-block" data-dropzone data-max="20" data-max-total-mb="7" data-max-mb="5" data-previews="#formPreviews">
+      <input type="file" name="images[]" accept="image/jpeg,image/png,image/webp" multiple aria-label="เลือกรูปภาพประกอบ (เลือกได้หลายรูป)">
+      <span class="dz-ic"><i class="bi bi-cloud-arrow-up" aria-hidden="true"></i></span>
+      <div class="fw-semibold mt-1">ลากรูปมาวางที่นี่ หรือคลิกเพื่อเลือกหลายรูป</div>
+      <div class="small text-muted">รูปแรกจะเป็นภาพปกอัตโนมัติ (เปลี่ยนภายหลังได้) · ระบบย่อรูปให้อัตโนมัติ</div>
+      <div class="small fw-semibold text-gold-strong mt-1" data-dz-count aria-live="polite"></div>
+    </label>
+    <div class="dz-previews" id="formPreviews"></div>
+      </div>
+
+  <div class="form-actions"><button type="submit" class="btn btn-navy"><i class="bi bi-save" aria-hidden="true"></i> บันทึก</button>
+    <a class="btn btn-outline-secondary" href="mou_view.php@id=5.html">ยกเลิก</a>
+    <span class="small text-muted ms-auto"><span class="text-danger" aria-hidden="true">*</span> = จำเป็นต้องกรอก</span></div>
+</form>
+<script nonce="3LBfYtJI0vrHpb6+mG4zQQ==">
+document.addEventListener('DOMContentLoaded', function () {
+  var f = document.getElementById('mouForm');
+  function be(inp) { var h = document.getElementById(inp.id + '-be'); if (!h) return;
+    if (!inp.value) { h.textContent = ''; return; }
+    var p = inp.value.split('-'); var m = ['', 'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+    h.textContent = 'พ.ศ.: ' + parseInt(p[2], 10) + ' ' + m[parseInt(p[1], 10)] + ' ' + (parseInt(p[0], 10) + 543); }
+  document.querySelectorAll('.js-date').forEach(function (i) { be(i); i.addEventListener('change', function () { be(i); calc(); }); });
+  function calc() { var s = f.start_date.value, e = f.end_date.value;
+    if (s && e && !f.duration_years.dataset.manual) f.duration_years.value = Math.max(0, Math.round((new Date(e) - new Date(s)) / 86400000 / 365.25 * 10) / 10); }
+  f.duration_years.addEventListener('input', function () { this.dataset.manual = '1'; });
+  // ตรวจฝั่งไคลเอนต์: ข้อความใต้ช่อง + กล่องสรุปที่รับ focus (app.js: MouForm)
+  f.addEventListener('submit', function (ev) { var errs = [];
+    if (!f.mou_no.value.trim()) errs.push(['mou_no', 'กรุณากรอกเลขที่ MOU']);
+    if (!f.title.value.trim()) errs.push(['title', 'กรุณากรอกชื่อเรื่อง']);
+    if (!f.partner_id.value) errs.push(['partner_id', 'กรุณาเลือกหน่วยงานคู่ความร่วมมือ']);
+    [['sign_date', 'วันที่ลงนาม'], ['start_date', 'วันที่เริ่ม'], ['end_date', 'วันที่สิ้นสุด']].forEach(function (d) {
+      if (!f[d[0]].value) errs.push([d[0], 'กรุณาระบุ' + d[1]]); });
+    if (f.start_date.value && f.end_date.value && f.end_date.value < f.start_date.value) errs.push(['end_date', 'วันที่สิ้นสุดต้องไม่ก่อนวันที่เริ่ม']);
+    if (errs.length) { ev.preventDefault(); ev.stopImmediatePropagation(); MouForm.showErrors(f, errs); } });
+
+  // โหลดรายชื่อหน่วยงานใหม่ (หลังเพิ่มหน่วยงานในแท็บอื่น) โดยไม่ต้องรีเฟรชหน้า — ค่าที่เลือกไว้ยังอยู่
+  var sel = f.partner_id, btn = document.getElementById('reloadPartners');
+  function reloadPartners(announce) {
+    return fetch('partners_json.php', { credentials: 'same-origin', cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (list) {
+      var cur = sel.value, before = sel.options.length - 1;
+      sel.length = 1;
+      list.forEach(function (p) { var o = new Option(p.label, p.id); if (String(p.id) === cur) o.selected = true; sel.add(o); });
+      var added = list.length - before;
+      if (announce || added > 0) MouFlash('info', added > 0 ? 'เพิ่มหน่วยงานใหม่ในรายการแล้ว ' + added + ' รายการ' : 'รายชื่อหน่วยงานเป็นปัจจุบันแล้ว');
+    }).catch(function () { if (announce) MouFlash('warning', 'โหลดรายชื่อหน่วยงานไม่สำเร็จ กรุณาลองใหม่'); });
+  }
+  btn.addEventListener('click', function () { reloadPartners(true); });
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') reloadPartners(false); });
+});
+</script>
+    </div>
+  </div>
+</div>
+<script src="../assets/vendor/jquery/jquery.min.js@v=1795594268"></script><script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js@v=1795594266"></script><script src="../assets/vendor/datatables/jquery.dataTables.min.js@v=1795594268"></script><script src="../assets/vendor/datatables/dataTables.bootstrap5.min.js@v=1795594268"></script><script src="../assets/vendor/sweetalert2/sweetalert2.all.min.js@v=1795594269"></script><script src="../assets/js/app.js@v=1795594254"></script><script src="../demo-banner.js"></script></body>
+</html>
