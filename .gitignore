@@ -1,0 +1,15 @@
+# ไฟล์ที่ผู้ใช้อัปโหลด (เก็บเฉพาะไฟล์กันเปิดโฟลเดอร์)
+uploads/**/*
+!uploads/**/
+!uploads/**/index.php
+!uploads/**/.htaccess
+uploads/.php-error.log
+*.log
+# ไฟล์สำรองข้อมูล / ไฟล์ชั่วคราว
+*.zip
+backups/
+Claude outputs/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

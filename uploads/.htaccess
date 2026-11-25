@@ -1,0 +1,11 @@
+# ห้ามเข้าถึงไฟล์อัปโหลดโดยตรง — ไฟล์ MOU/ข้อเสนอดาวน์โหลดผ่าน PHP เท่านั้น
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
+# กันรันสคริปต์ (ชั้นที่สอง)
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phar
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phar

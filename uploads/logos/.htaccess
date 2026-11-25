@@ -1,0 +1,15 @@
+# โฟลเดอร์รูปสาธารณะ (โลโก้/ภาพข่าว): อนุญาตเฉพาะไฟล์รูปภาพเท่านั้น
+<IfModule mod_authz_core.c>
+  Require all denied
+  <FilesMatch "\.(jpe?g|png|webp)$">
+    Require all granted
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  <FilesMatch "\.(jpe?g|png|webp)$">
+    Allow from all
+  </FilesMatch>
+</IfModule>
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phar
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phar
