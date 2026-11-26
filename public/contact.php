@@ -35,7 +35,14 @@ unset($_SESSION['proposal_done']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_require();
-    $old = $_POST;
+    // ค่าที่กรอกไว้ (ใช้เติมฟอร์มกลับ): รับเฉพาะข้อความ หรือรายการของข้อความ — กันคำขอปลอมที่ส่งค่าซ้อนกันมาจนเกิด Warning
+    foreach ($_POST as $k => $v) {
+        if (is_string($v)) {
+            $old[$k] = $v;
+        } elseif (is_array($v)) {
+            $old[$k] = array_values(array_filter($v, 'is_string'));
+        }
+    }
 
     // --- ป้องกันสแปม ---
     if (post('website_url') !== '') {                       // honeypot: บอทมักกรอกช่องที่ซ่อนไว้
@@ -114,7 +121,7 @@ $_SESSION['proposal_form_time'] = time();
 
 public_header('ติดต่อและเสนอความร่วมมือ', 'ข้อมูลติดต่อฝ่ายประสานงานความร่วมมือ ขั้นตอนการทำ MOU และแบบฟอร์มเสนอความร่วมมือสำหรับหน่วยงานภายนอก', ['active' => 'contact']);
 $lat = setting('map_lat', '13.6685'); $lng = setting('map_lng', '100.6047');
-$o = fn(string $k, string $d = '') => e($old[$k] ?? $d);
+$o = fn(string $k, string $d = '') => e(is_string($old[$k] ?? null) ? $old[$k] : $d);
 // attribute ของช่อง: id + class ตอนผิด + aria — $fa('email') → ' id="f-email" class="form-control is-invalid" aria-invalid=…'
 $fa = fn(string $k, string $cls = 'form-control') => ' id="' . fid($k) . '" class="' . $cls . field_err_class($errors, $k) . '"' . field_err_attrs($errors, $k);
 $hadFile = !empty($_FILES['attachment']['name']) && $_FILES['attachment']['error'] !== UPLOAD_ERR_NO_FILE;

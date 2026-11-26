@@ -14,10 +14,14 @@ RewriteRule ^news/?$                   public/news_list.php      [L,QSA]
 RewriteRule ^news/([0-9]+)/?$          public/news_detail.php?id=$1 [L,QSA]
 RewriteRule ^contact/?$                public/contact.php        [L,QSA]
 RewriteRule ^download/([0-9]+)/?$      public/download.php?id=$1 [L,QSA]
+RewriteRule ^robots\.txt$              public/robots.php         [L]
+RewriteRule ^sitemap\.xml$             public/sitemap.php        [L]
+# โฟลเดอร์ไฟล์ส่งงาน/สำรอง (เช่น "Claude outputs") ต้องไม่อยู่ในเว็บ — ถ้าเผลอวางไว้ก็ปิดไม่ให้เปิดจากเว็บ
+RewriteRule ^Claude\soutputs(/|$) - [F,L]
 </IfModule>
 
-# ซ่อนไฟล์สำคัญ
-<FilesMatch "(^\.|\.(sql|log|md|ini|bak|sh|bat)$)">
+# ซ่อนไฟล์สำคัญ (รวมไฟล์บีบอัด/สำรอง เช่น .zip ที่มีซอร์สโค้ดทั้งระบบ)
+<FilesMatch "(^\.|\.(sql|log|md|ini|bak|sh|bat|zip|rar|7z|gz|tar)$)">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>

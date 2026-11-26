@@ -18,6 +18,19 @@ function public_header(string $title, string $desc = '', array $opts = []): void
     $logo    = setting('college_logo');
     // ใช้โฮสต์จาก BASE_URL (ผ่านการตรวจแล้ว) ไม่ใช้ header Host ดิบ
     $canon   = preg_replace('#^(https?://[^/]+).*$#i', '$1', BASE_URL) . ($_SERVER['REQUEST_URI'] ?? '/');
+    // URL หลักของหน้า (canonical): ลิงก์แบบเดียวกันเสมอ ไม่ว่าจะเปิดจาก /mou/5 หรือ public/mou_detail.php?id=5
+    // และไม่รวมพารามิเตอร์ค้นหา/ติดตามผล (ยกเว้นเลขหน้าของรายการข่าว)
+    $script  = basename((string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+    $page    = (int) get('page', '1');
+    $canonUrl = $opts['canonical'] ?? [
+        'index.php'       => route('home'),
+        'mou_list.php'    => route('mou'),
+        'mou_detail.php'  => route('mou_detail', (int) get('id')),
+        'news_list.php'   => route('news') . ($page > 1 ? '?page=' . $page : ''),
+        'news_detail.php' => route('news_detail', (int) get('id')),
+        'contact.php'     => route('contact'),
+    ][$script] ?? strtok($canon, '?');
+    $canon = $canonUrl;
     $ogImage = $opts['og_image'] ?? ($logo ? url('uploads/logos/' . $logo) : '');
     $nav = ['home' => ['หน้าหลัก', route('home'), 'bi-house'], 'mou' => ['สืบค้น MOU', route('mou'), 'bi-search'],
             'news' => ['ข่าวประชาสัมพันธ์', route('news'), 'bi-newspaper'], 'contact' => ['ติดต่อ/เสนอความร่วมมือ', route('contact'), 'bi-envelope']];
@@ -36,7 +49,7 @@ function public_header(string $title, string $desc = '', array $opts = []): void
 <meta property="og:locale" content="th_TH">
 <meta property="og:title" content="<?= e($full) ?>">
 <meta property="og:description" content="<?= e(excerpt($desc, 160)) ?>">
-<meta property="og:url" content="<?= e($canon) ?>">
+<link rel="canonical" href="<?= e($canon) ?>"><meta property="og:url" content="<?= e($canon) ?>">
 <?php if ($ogImage): ?><meta property="og:image" content="<?= e($ogImage) ?>"><?php endif; ?>
 <?= ui_head_assets(false, !empty($opts['datatables'])) ?>
 </head>

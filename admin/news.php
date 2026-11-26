@@ -8,6 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     admin_post_guard('news');
     $act = post('action') ?: 'save'; $id = (int) post('id');
     if (!in_array($act, ['save', 'delete', 'toggle'], true)) { http_response_code(400); exit('ไม่รู้จักคำสั่งนี้'); }
+    // แก้ไข/ลบ/สลับสถานะ ต้องเป็นข่าวที่มีอยู่และยังไม่ถูกลบ (กันการเพิ่มรูปให้ข่าวที่ลบแล้ว หรือ id ที่ไม่มีอยู่)
+    if ($id && !db_val('SELECT id FROM news WHERE id = ? AND deleted_at IS NULL', [$id])) {
+        flash('error', 'ไม่พบข่าวนี้ หรือข่าวถูกลบไปแล้ว');
+        redirect('admin/news.php');
+    }
+    if (!$id && $act !== 'save') { flash('error', 'ไม่พบข่าวที่ต้องการ'); redirect('admin/news.php'); }
     if ($act === 'delete') {
         db_exec('UPDATE news SET deleted_at = NOW() WHERE id = ?', [$id]);
         log_activity('news_delete', 'news#' . $id);
@@ -16,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if ($act === 'toggle') {
         db_exec('UPDATE news SET is_published = 1 - is_published WHERE id = ?', [$id]);
+        log_activity('news_toggle', 'news#' . $id);
         flash('success', 'เปลี่ยนสถานะเผยแพร่แล้ว');
         redirect('admin/news.php');
     }

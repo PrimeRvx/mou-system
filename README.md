@@ -2,6 +2,12 @@
 
 PHP 8.0+ (PDO) · MySQL/MariaDB · Bootstrap 5 · DataTables · Chart.js · SweetAlert2 — ไม่ต้องใช้ Composer และไม่ต้องต่ออินเทอร์เน็ต (ไลบรารี/ฟอนต์อยู่ใน `assets/vendor/`)
 
+## v2.0.1 (แก้ไขจากการตรวจระบบ)
+- กู้ไฟล์ `admin/mou_actions.php` ที่หายไปใน v2.0.0 (ปุ่มลบ/กู้คืน/ลบถาวร MOU, ไฟล์แนบ, รูปภาพ, กิจกรรม ตอบ 404)
+- ปิดไฟล์ `.zip`/ไฟล์สำรองไม่ให้ดาวน์โหลดจากเว็บ, เพิ่ม canonical, `robots.txt`, `sitemap.xml`
+- อัปเกรดจาก v2.0.0: คัดลอกไฟล์ทับ แล้วนำเข้า `database/migration_v4_integrity.sql` — ก่อนใช้งานจริงทำตาม `docs/DEPLOY-CHECKLIST-v2.0.1.md`
+- ตรวจก่อนส่งงาน: `php tools/check_release.php`
+
 ## มีอะไรใหม่ใน v2
 รูปภาพประกอบรายละเอียด MOU (อัลบั้ม + Lightbox), โหมดมืด/สว่าง, Design System ใหม่, Animations, Loading overlay, ดู/ซ่อนรหัสผ่าน — **อัปเกรดจากเวอร์ชันเดิม ดูขั้นตอนที่ `docs/UPGRADE-v2.md`** (ต้องนำเข้า `database/migration_v2_images.sql`)
 

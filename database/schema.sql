@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- หน่วยงานคู่ความร่วมมือ ----------
 CREATE TABLE IF NOT EXISTS `partners` (
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `partners` (
   PRIMARY KEY (`id`),
   KEY `idx_type` (`type`),
   KEY `idx_province` (`province`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- สาขาวิชา ----------
 CREATE TABLE IF NOT EXISTS `programs` (
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `programs` (
   `level` ENUM('ปวช.','ปวส.') NOT NULL DEFAULT 'ปวช.',
   `is_active` TINYINT(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- ข้อตกลงความร่วมมือ (MOU) ----------
 CREATE TABLE IF NOT EXISTS `mou` (
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `mou` (
   `budget` DECIMAL(14,2) DEFAULT NULL COMMENT 'ข้อมูลภายใน ห้ามแสดงสาธารณะ',
   `student_benefit_count` INT UNSIGNED NOT NULL DEFAULT 0,
   `status` ENUM('draft','active','expiring','expired','cancelled') NOT NULL DEFAULT 'draft',
-  `is_public` TINYINT(1) NOT NULL DEFAULT 1,
+  `is_public` TINYINT(1) NOT NULL DEFAULT 0,
   `responsible` VARCHAR(150) DEFAULT NULL COMMENT 'ผู้รับผิดชอบภายในวิทยาลัย',
   `note` TEXT COMMENT 'หมายเหตุภายใน',
   `created_by` INT UNSIGNED DEFAULT NULL,
@@ -89,10 +89,9 @@ CREATE TABLE IF NOT EXISTS `mou` (
   KEY `idx_end_date` (`end_date`),
   KEY `idx_sign_date` (`sign_date`),
   KEY `idx_deleted` (`deleted_at`),
-  FULLTEXT KEY `ft_mou` (`title`,`summary`,`objective`),
   CONSTRAINT `fk_mou_partner` FOREIGN KEY (`partner_id`) REFERENCES `partners`(`id`),
   CONSTRAINT `fk_mou_user` FOREIGN KEY (`created_by`) REFERENCES `users`(`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_programs` (
   `mou_id` INT UNSIGNED NOT NULL,
@@ -100,13 +99,13 @@ CREATE TABLE IF NOT EXISTS `mou_programs` (
   PRIMARY KEY (`mou_id`,`program_id`),
   CONSTRAINT `fk_mp_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou`(`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_mp_prog` FOREIGN KEY (`program_id`) REFERENCES `programs`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_categories` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_category_map` (
   `mou_id` INT UNSIGNED NOT NULL,
@@ -114,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `mou_category_map` (
   PRIMARY KEY (`mou_id`,`category_id`),
   CONSTRAINT `fk_mc_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou`(`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_mc_cat` FOREIGN KEY (`category_id`) REFERENCES `mou_categories`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_benefits` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -124,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `mou_benefits` (
   PRIMARY KEY (`id`),
   KEY `idx_mou` (`mou_id`),
   CONSTRAINT `fk_mb_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_files` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -141,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `mou_files` (
   UNIQUE KEY `uq_stored` (`stored_name`),
   KEY `idx_mou` (`mou_id`),
   CONSTRAINT `fk_mf_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_renewals` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -155,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `mou_renewals` (
   PRIMARY KEY (`id`),
   KEY `idx_mou` (`mou_id`),
   CONSTRAINT `fk_mr_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `mou_activities` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -168,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `mou_activities` (
   PRIMARY KEY (`id`),
   KEY `idx_mou` (`mou_id`),
   CONSTRAINT `fk_ma_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou`(`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- รูปภาพประกอบรายละเอียด MOU (อัลบั้ม) — เพิ่มใน v2 ----------
 CREATE TABLE IF NOT EXISTS `mou_images` (
@@ -187,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `mou_images` (
   UNIQUE KEY `uq_img_stored` (`stored_name`),
   KEY `idx_img_mou` (`mou_id`, `sort_order`),
   CONSTRAINT `fk_img_mou` FOREIGN KEY (`mou_id`) REFERENCES `mou` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='รูปภาพประกอบรายละเอียด MOU';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='รูปภาพประกอบรายละเอียด MOU';
 
 -- ---------- ข่าวประชาสัมพันธ์ ----------
 CREATE TABLE IF NOT EXISTS `news` (
@@ -205,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`id`),
   KEY `idx_pub` (`is_published`,`published_at`),
   CONSTRAINT `fk_news_user` FOREIGN KEY (`author_id`) REFERENCES `users`(`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- อัลบั้มรูปภาพประกอบข่าว — เพิ่มใน v2.3 (ฐานเดิม: รัน migration_v3_news_images.sql) ----------
 CREATE TABLE IF NOT EXISTS `news_images` (
@@ -223,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `news_images` (
   UNIQUE KEY `uq_news_img_stored` (`stored_name`),
   KEY `idx_news_img` (`news_id`, `sort_order`),
   CONSTRAINT `fk_news_img` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='รูปภาพประกอบข่าว (อัลบั้ม)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='รูปภาพประกอบข่าว (อัลบั้ม)';
 
 -- ---------- ข้อเสนอความร่วมมือจากภายนอก ----------
 CREATE TABLE IF NOT EXISTS `proposals` (
@@ -250,15 +249,16 @@ CREATE TABLE IF NOT EXISTS `proposals` (
   `updated_at` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_ref` (`ref_no`),
-  KEY `idx_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `idx_status` (`status`),
+  CONSTRAINT `fk_prop_mou` FOREIGN KEY (`converted_mou_id`) REFERENCES `mou`(`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- ตั้งค่าเว็บ ----------
 CREATE TABLE IF NOT EXISTS `settings` (
   `skey` VARCHAR(80) NOT NULL,
   `svalue` TEXT,
   PRIMARY KEY (`skey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- Activity log ----------
 CREATE TABLE IF NOT EXISTS `activity_logs` (
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `activity_logs` (
   PRIMARY KEY (`id`),
   KEY `idx_created` (`created_at`),
   KEY `idx_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- แจ้งเตือนในระบบหลังบ้าน ----------
 CREATE TABLE IF NOT EXISTS `notifications` (
@@ -285,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_read` (`is_read`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------- Rate limit (ใช้ DB เพื่อให้ทำงานบน shared hosting) ----------
 CREATE TABLE IF NOT EXISTS `rate_limits` (
@@ -295,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `rate_limits` (
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_lookup` (`bucket`,`ip_hash`,`created_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
 

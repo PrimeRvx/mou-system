@@ -40,8 +40,9 @@ function mou_search(array $f, bool $public = true, int $limit = 1000): array
         $params[] = $f['status'];
     }
     if ((int) ($f['year'] ?? 0) > 0) {
-        $where[] = 'YEAR(m.sign_date) = ?';
-        $params[] = (int) $f['year'];
+        // ช่วงวันที่ (แทน YEAR(m.sign_date) = ?) เพื่อให้ใช้ index idx_sign_date ได้
+        $where[] = 'm.sign_date BETWEEN ? AND ?';
+        array_push($params, sprintf('%04d-01-01', (int) $f['year']), sprintf('%04d-12-31', (int) $f['year']));
     }
     if (($f['province'] ?? '') !== '') {
         $where[] = 'p.province = ?';

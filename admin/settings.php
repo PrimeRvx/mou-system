@@ -12,12 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     elseif (!is_numeric(post('map_lat')) || !is_numeric(post('map_lng'))) { $err = 'พิกัดแผนที่ต้องเป็นตัวเลข'; }
     elseif ((int) post('expiring_days') < 1 || (int) post('expiring_days') > 365) { $err = 'จำนวนวันแจ้งเตือนต้องอยู่ระหว่าง 1–365'; }
     if ($err) { flash('error', $err); redirect('admin/settings.php'); }
-    foreach ($keys as $k) { setting_save($k, mb_substr(post($k), 0, 2000)); }
+    // ตรวจและบันทึกโลโก้ "ก่อน" ค่าอื่น — ถ้าไฟล์ไม่ผ่านจะไม่มีค่าใดถูกบันทึกครึ่ง ๆ กลาง ๆ
+    $newLogo = null;
     if (!empty($_FILES['college_logo']) && $_FILES['college_logo']['error'] !== UPLOAD_ERR_NO_FILE) {
         $r = save_upload($_FILES['college_logo'], ['image/png' => 'png', 'image/jpeg' => 'jpg', 'image/webp' => 'webp'], 2 * 1024 * 1024, 'logos');
-        if (isset($r['error'])) { flash('error', 'โลโก้: ' . $r['error']); redirect('admin/settings.php'); }
+        if (isset($r['error'])) { flash('error', 'โลโก้: ' . $r['error'] . ' (ยังไม่ได้บันทึกการตั้งค่าใด ๆ)'); redirect('admin/settings.php'); }
+        $newLogo = $r['stored'];
+        optimize_image(UPLOAD_PATH . '/logos/' . $newLogo, (string) $r['mime'], 512);   // โลโก้แสดงไม่เกิน ~100px ย่อเหลือ 512px ก็คมพอ
+    }
+    foreach ($keys as $k) { setting_save($k, mb_substr(post($k), 0, 2000)); }
+    if ($newLogo) {
         $old = setting('college_logo'); if ($old) { delete_upload('logos', $old); }
-        setting_save('college_logo', $r['stored']);
+        setting_save('college_logo', $newLogo);
     }
     refresh_mou_status(true);
     log_activity('settings_save', 'settings');

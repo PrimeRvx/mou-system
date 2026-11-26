@@ -86,8 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($line !== '') { db_exec('INSERT INTO mou_benefits (mou_id, item, sort_order) VALUES (?,?,?)', [$id, mb_substr($line, 0, 500), ++$i]); }
             }
             // แปลงข้อเสนอเป็น MOU: ผูกกลับและปิดเป็น "อนุมัติ"
-            if ($fromProposal && !empty($_POST['proposal_id'])) {
-                db_exec("UPDATE proposals SET converted_mou_id = ?, status = 'approved' WHERE id = ?", [$id, (int) $_POST['proposal_id']]);
+            // ใช้เลขข้อเสนอที่ตรวจแล้วว่ามีอยู่จริง ($pr) — ไม่เชื่อค่า proposal_id ที่ส่งมากับฟอร์มโดยตรง
+            if (!empty($pr) && (int) post('proposal_id') === (int) $pr['id']) {
+                db_exec("UPDATE proposals SET converted_mou_id = ?, status = 'approved' WHERE id = ?", [$id, (int) $pr['id']]);
             }
             $pdo->commit();
         } catch (Throwable $ex) {
